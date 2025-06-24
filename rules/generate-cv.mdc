@@ -1,0 +1,288 @@
+---
+description: Generates customized CV based on job analysis and verified experience data
+globs: 
+  - "data/**/*.md"
+alwaysApply: false
+---
+
+# Rule: Generate Customized CV
+
+## Goal
+Create a tailored CV by selecting relevant experiences, customizing language, and optimizing for the target role. Only use verified information and never embellish qualifications.
+
+## Prerequisites
+- Job analysis completed (`analyze-job-posting.mdc`)
+- Experience verification completed as needed
+- All data files populated in `/data/`
+
+## Generation Process
+
+### Step 1: Load Job Analysis
+Read the job analysis file to understand:
+- Target role requirements
+- Keywords for ATS optimization
+- Company culture indicators
+- Fit assessment results
+
+### Step 2: Content Selection Strategy
+
+#### Priority System
+1. **Must-Have Requirements**: Include all verified matches
+2. **Transferable Skills**: Relevant adjacent experience
+3. **Cultural Fit**: Experiences showing company values
+4. **Recent Experience**: Last 3-5 years get priority
+5. **Quantified Results**: Prioritize measurable achievements
+
+#### Selection Criteria
+```markdown
+For each experience in /data/experiences/:
+- Relevance Score: [1-10 based on keyword matches]
+- Verification Status: [Verified/Unverified]
+- Impact Level: [Quantified achievements present]
+- Recency: [Years since experience]
+
+Selection Algorithm:
+- Include if Relevance >= 7 AND Verified
+- Include if Relevance >= 5 AND Recent (last 3 years) AND Verified
+- Include up to 6 most relevant experiences
+- Always include current/most recent position
+```
+
+### Step 3: Language Customization
+
+#### Keyword Integration
+- Extract target keywords from job analysis
+- Map to verified experiences naturally
+- Avoid keyword stuffing - maintain readability
+- Use synonyms and variations
+
+#### Tone Adaptation
+- **Startup/Tech**: Action-oriented, innovation focus
+- **Corporate**: Professional, process-oriented
+- **Creative**: Portfolio emphasis, creative problem-solving
+- **Government/Non-profit**: Impact and community focus
+
+### Step 4: Generate CV Content
+
+#### Template Population
+Create customized content for:
+
+```markdown
+# Personal Information
+- Name: [From personal-info.md]
+- Title: [Customized for target role]
+- Contact: [Standard format]
+
+# Professional Summary
+[Rewritten to emphasize relevant experience for target role - max 3 sentences]
+
+# Experience Section
+[Selected and reordered experiences with customized descriptions]
+
+# Skills Section
+[Relevant skills grouped by category, matching job requirements]
+
+# Education
+[Include if relevant or required]
+
+# Additional Sections
+[Awards, projects, certifications - only if space permits and relevant]
+```
+
+#### Achievement Optimization
+For each selected experience:
+- Lead with most relevant achievement
+- Quantify results where available
+- Use action verbs from job posting
+- Highlight technologies/tools mentioned in requirements
+
+### Step 5: ATS Optimization
+
+#### Format Compliance
+- Standard section headers
+- Clean, simple formatting
+- Proper heading hierarchy (H1, H2, H3)
+- No graphics or complex layouts
+
+#### Keyword Density
+- Include target keywords 2-3 times naturally
+- Use variations and synonyms
+- Place keywords in context, not lists
+- Maintain 1-2% keyword density
+
+#### Length Optimization
+- 1 page for <5 years experience
+- 2 pages for 5+ years experience
+- Focus on most recent 10-15 years
+- Prioritize relevant over comprehensive
+
+### Step 6: Generate Output Files
+
+#### Primary Output: Interactive HTML File
+File: `/outputs/cv/[company]-[role]-[date].html`
+
+**Template Processing Steps:**
+1. Read `/templates/cv-template.html` 
+2. Read user data from `/data/` files:
+   - `/data/personal-info.md` for contact details
+   - `/data/experiences/` files for work history
+   - `/data/skills/` files for skills sections
+   - `/data/education/` files for education
+   - Additional sections as available
+
+3. **Replace template placeholders with actual data:**
+   - `{{name}}` → Full name from personal-info.md
+   - `{{title}}` → Professional title customized for target role
+   - `{{email}}` → Email from personal-info.md  
+   - `{{phone}}` → Phone from personal-info.md
+   - `{{location}}` → Location from personal-info.md
+   - `{{summary}}` → Customized professional summary
+   - `{{experiences}}` → Selected and customized work experiences
+   - `{{skillCategories}}` → Organized skill categories
+   - `{{education}}` → Education entries
+
+4. **Content Customization:**
+   - Select most relevant experiences based on job analysis
+   - Customize job titles and descriptions with target keywords
+   - Reorder experiences by relevance to target role
+   - Include only skills mentioned in job requirements + transferable skills
+   - Adjust summary to emphasize relevant qualifications
+
+5. **Create final HTML file:**
+   - Save complete, functional HTML file to outputs folder
+   - Include all CSS and JavaScript inline for portability
+   - Set unique `window.cvId` for data persistence
+   - Ready to open in browser immediately
+
+**Browser Integration:**
+- Use Cursor/Claude Code's ability to open files in browser
+- User can immediately see and edit the generated CV
+- All editing features work locally in browser
+- PDF export via browser's print function (Ctrl+P → Save as PDF)
+
+### Step 7: Quality Assurance
+
+#### Content Verification
+- All claims traceable to verified sources
+- No embellished responsibilities
+- Consistent date formats
+- Accurate contact information
+
+#### Format Checking
+- Spell check all content
+- Consistent formatting
+- Proper grammar and punctuation
+- Professional appearance
+
+#### ATS Testing
+- Keyword presence without stuffing
+- Readable by parsing systems
+- Standard section recognition
+- Clean, simple structure
+
+## Generation Rules
+
+### NEVER:
+- Add unverified experiences or skills
+- Embellish job responsibilities
+- Extend employment dates
+- Create fictional achievements
+- Copy language not reflecting actual experience
+
+### ALWAYS:
+- Use only verified information
+- Maintain honest representation
+- Provide accurate dates and details
+- Ensure claims are defensible in interviews
+- Reference source data files
+
+## Output Summary
+
+```
+✅ CV Generated Successfully
+
+📄 File Created:
+- Interactive CV: /outputs/cv/[company]-[role]-[date].html
+
+📊 Content Summary:
+- Experiences Selected: [X]/[Total available]
+- Keywords Integrated: [X primary keywords]
+- Verification Status: [X verified]/[X total claims]
+- Customization Level: [Highly targeted / Moderately targeted / Basic]
+
+🎯 Customization Applied:
+- Role-specific summary: ✅
+- Relevant experience emphasis: ✅
+- Company culture alignment: ✅
+- ATS optimization: ✅
+
+📱 Ready for Use:
+- Opening CV in browser now...
+- Use inline editing for final adjustments
+- Export PDF: Ctrl+P → Save as PDF
+- All changes auto-save locally
+
+Next Steps:
+1. ✅ Review generated CV (opening in browser)
+2. Make final edits using inline editor
+3. Export final PDF for submission (Ctrl+P)
+4. Optional: Generate matching cover letter
+
+💡 Pro Tip: The CV includes multiple style options (Modern/Tech/Corporate) - try different themes using the toolbar buttons!
+```
+
+## Local File Generation Process
+
+When generating the CV, follow these steps:
+
+1. **Read Data Files**: Use `Read` tool to load all relevant data from `/data/` folder
+2. **Process Content**: Select and customize content based on job analysis
+3. **Generate HTML**: Create complete HTML file with real data (no placeholders)
+4. **Save File**: Use `Write` tool to save to `/outputs/cv/` folder
+5. **Open in Browser**: Use appropriate command to open file locally
+
+## Example Generation Workflow
+
+```bash
+# 1. Read user's personal info
+personal_data = read_file("/data/personal-info.md")
+
+# 2. Read and select relevant experiences  
+experiences = select_relevant_experiences(job_requirements)
+
+# 3. Customize content for target role
+customized_summary = create_role_summary(target_role, experiences)
+
+# 4. Generate complete HTML
+html_content = populate_template(template, {
+    name: extract_name(personal_data),
+    title: customize_title(target_role),
+    experiences: format_experiences(experiences),
+    # ... etc
+})
+
+# 5. Save and open
+save_file(f"/outputs/cv/{company}-{role}-{date}.html", html_content)
+open_in_browser(file_path)
+```
+
+## File Templates
+
+### Experience Entry Template
+```
+## [Job Title] | [Company Name]
+[Start Date] - [End Date] | [Location]
+
+• [Achievement 1 with quantified result]
+• [Achievement 2 emphasizing relevant skills]
+• [Achievement 3 showing impact/leadership]
+• [Technical skill/tool usage if relevant]
+```
+
+### Skills Section Template
+```
+**[Skill Category Relevant to Job]**: [Tool 1], [Tool 2], [Tool 3]
+**[Secondary Skill Category]**: [Skill 1], [Skill 2], [Skill 3]
+```
+
+This generation process ensures every CV is accurately tailored while maintaining complete integrity about your actual experience and qualifications.

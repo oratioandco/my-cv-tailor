@@ -1,0 +1,161 @@
+name: Template Contribution
+description: Submit a new CV or cover letter template
+title: "[Template] "
+labels: ["type: template", "status: needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing a template! Templates are a great way to expand My CV Tailor's options for different industries and styles.
+
+  - type: dropdown
+    id: template-type
+    attributes:
+      label: Template Type
+      description: What type of template are you contributing?
+      options:
+        - CV Template
+        - Cover Letter Template
+        - Both CV and Cover Letter (matching set)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: template-description
+    attributes:
+      label: Template Description
+      description: Describe your template and its intended use case.
+      placeholder: |
+        This template is designed for...
+        
+        It would be ideal for people in [industry/role type] because...
+        
+        The style is [modern/traditional/creative] and features...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-industry
+    attributes:
+      label: Target Industry/Role
+      description: What industry or role type is this template optimized for?
+      options:
+        - Technology/Software
+        - Creative/Design
+        - Finance/Consulting
+        - Healthcare/Science
+        - Education/Academia
+        - Sales/Marketing
+        - Engineering/Manufacturing
+        - General/Universal
+        - Other (please specify)
+      default: 7
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: template-features
+    attributes:
+      label: Template Features
+      description: Which features does your template include?
+      options:
+        - label: Multiple theme support (Modern/Tech/Corporate)
+        - label: Interactive editing toolbar
+        - label: Print/PDF optimization
+        - label: ATS-friendly structure
+        - label: Responsive design
+        - label: Accessibility features
+        - label: Auto-save functionality
+        - label: Keyboard navigation support
+
+  - type: textarea
+    id: testing-completed
+    attributes:
+      label: Testing Completed
+      description: What testing have you done on this template?
+      placeholder: |
+        Browsers tested: Chrome, Firefox, Safari, Edge
+        PDF export tested: Yes/No
+        ATS compatibility checked: Yes/No
+        Inline editing verified: Yes/No
+        Placeholder system tested: Yes/No
+        
+        Any issues found:
+    validations:
+      required: true
+
+  - type: textarea
+    id: template-files
+    attributes:
+      label: Template Files
+      description: List the files you're contributing and describe each one.
+      placeholder: |
+        - template-name.html - Main template file
+        - template-name-cover-letter.html - Matching cover letter (if applicable)
+        - README-template-name.md - Documentation for the template
+        - screenshot-template-name.png - Preview image
+    validations:
+      required: true
+
+  - type: textarea
+    id: placeholder-documentation
+    attributes:
+      label: Placeholder Documentation
+      description: Document any new placeholders or special requirements your template uses.
+      placeholder: |
+        Standard placeholders used:
+        - [FULL_NAME]
+        - [EMAIL]
+        - [PHONE]
+        etc.
+        
+        New/custom placeholders:
+        - [CUSTOM_PLACEHOLDER] - Description of what this is for
+        
+        Special requirements:
+        - None / List any special setup or usage requirements
+
+  - type: textarea
+    id: design-inspiration
+    attributes:
+      label: Design Inspiration (Optional)
+      description: Any inspiration or references for your template design?
+      placeholder: |
+        Inspired by...
+        References used...
+        Design principles followed...
+
+  - type: checkboxes
+    id: contribution-checklist
+    attributes:
+      label: Contribution Checklist
+      description: Please confirm your template meets these requirements:
+      options:
+        - label: Template uses the standard placeholder system [PLACEHOLDER_NAME]
+          required: true
+        - label: Template includes interactive editing toolbar
+          required: true
+        - label: Template renders properly when printed to PDF
+          required: true
+        - label: Template is ATS-friendly (semantic HTML, no complex graphics)
+          required: true
+        - label: Template has been tested in at least Chrome and one other browser
+          required: true
+        - label: Template follows accessibility best practices
+          required: true
+        - label: I have included documentation explaining how to use this template
+          required: true
+        - label: I understand this contribution will be licensed under the project's MIT license
+          required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any other information about your template contribution?
+      placeholder: |
+        Known limitations:
+        Future improvement ideas:
+        Usage tips:
+        Feedback or questions for maintainers:

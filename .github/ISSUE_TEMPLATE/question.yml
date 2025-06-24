@@ -1,0 +1,145 @@
+name: Question or Help
+description: Ask a question or get help using My CV Tailor
+title: "[Question] "
+labels: ["type: question", "status: needs-info"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about using My CV Tailor? We're here to help! Please provide as much detail as possible so we can give you the best assistance.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What type of help do you need?
+      options:
+        - Getting started / Setup help
+        - How to use a specific feature
+        - Best practices / Workflow advice
+        - Troubleshooting an issue
+        - AI platform compatibility
+        - Template usage or customization
+        - CV/career advice
+        - Other
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: |
+        I'm trying to...
+        
+        I want to understand how to...
+        
+        I'm confused about...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & Background
+      description: Help us understand your situation and what you're trying to accomplish.
+      placeholder: |
+        I'm using My CV Tailor to...
+        
+        My current situation is...
+        
+        I've already tried...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai-platform
+    attributes:
+      label: AI Platform
+      description: Which AI assistant are you using? (if relevant)
+      options:
+        - Cursor
+        - Claude Code
+        - Other (please specify in question)
+        - Not applicable
+      default: 3
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: Experience Level
+      description: How familiar are you with AI coding assistants and tools like My CV Tailor?
+      options:
+        - Complete beginner
+        - Some experience with AI tools
+        - Experienced with AI assistants
+        - Very experienced / Developer
+        - Not applicable
+      default: 1
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What Have You Tried?
+      description: What steps have you already taken? What documentation have you checked?
+      placeholder: |
+        I've read...
+        
+        I tried...
+        
+        I looked at...
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: What are you hoping to achieve? What would success look like?
+      placeholder: |
+        I want to be able to...
+        
+        The ideal result would be...
+        
+        Success would mean...
+
+  - type: checkboxes
+    id: documentation-checked
+    attributes:
+      label: Documentation Checked
+      description: Which documentation have you already reviewed?
+      options:
+        - label: Main README.md
+        - label: EXAMPLE-WORKFLOW.md
+        - label: PDF-EXPORT-GUIDE.md
+        - label: input/README.md (for import questions)
+        - label: CONTRIBUTING.md (for contribution questions)
+        - label: Existing GitHub issues
+        - label: None yet / Not sure what to check
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other details that might be helpful?
+      placeholder: |
+        Operating system:
+        Browser (if relevant):
+        Error messages (if any):
+        Screenshots or examples:
+        Timeline/urgency:
+
+  - type: checkboxes
+    id: help-checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm:
+      options:
+        - label: I have searched existing issues for similar questions
+          required: true
+        - label: I have checked the relevant documentation
+          required: true
+        - label: I have provided sufficient context for others to understand my question
+          required: true
+        - label: I understand this is for My CV Tailor support, not general career advice
+          required: true

@@ -1,0 +1,240 @@
+---
+description: Conversational setup guide that walks users through CV import and profile building
+globs: 
+  - "**/*"
+alwaysApply: false
+---
+
+# Rule: My CV Tailor Setup (Conversational Onboarding)
+
+## Goal
+Guide new users through a friendly, conversational setup process that ensures their CV data is properly imported and their professional profile is well-understood for optimal customization.
+
+## Conversational Flow
+
+### Opening: Welcome & Overview
+```
+👋 Welcome to My CV Tailor!
+
+I'm here to help you create a smart CV generation system that learns about your experience and creates perfectly customized CVs for each job you apply to.
+
+This setup will take about 10-15 minutes and involves:
+1. Getting your CV data imported 
+2. Understanding your career goals and preferences
+3. Setting up your professional profile for optimal customization
+
+Ready to get started? Let's make job applications easier and more effective!
+```
+
+### Step 1: CV Import (Conversational)
+```
+📄 First, let's get your CV information imported.
+
+I can work with several formats - what works best for you?
+
+A) I have a PDF of my current CV
+B) I'd like to use my LinkedIn profile  
+C) I want to paste my CV text directly
+D) I have my CV in a Word document
+E) I'm not sure what format would work best
+
+[Wait for user response, then provide specific instructions based on their choice]
+```
+
+#### For PDF Upload (Option A):
+```
+Perfect! PDF upload is usually the easiest method.
+
+📎 You can either:
+1. Attach the PDF file directly to this conversation, OR  
+2. Save your CV as "cv.pdf" and let me know when you've got it ready
+
+Which would you prefer?
+
+[If attachment]: Great! I can see your CV file. Let me process it now...
+[If file save]: No problem! Just let me know when you've saved it as "cv.pdf" and I'll import it.
+```
+
+#### For LinkedIn (Option B):
+```
+Excellent choice! LinkedIn profiles often have the most complete information.
+
+I can work with LinkedIn in two ways:
+
+🔹 **Quick method**: Export your LinkedIn profile as PDF
+   - Go to your LinkedIn profile
+   - Click "More" → "Save to PDF"  
+   - Then attach that PDF here or save it as "linkedin.pdf"
+
+🔹 **Complete method**: Download your full LinkedIn data (recommended)
+   - Go to LinkedIn Settings & Privacy
+   - Click "Get a copy of your data"
+   - This gives me access to all your details, including things not visible on your profile
+
+Which appeals to you more? The quick method gets us started faster, but the complete method gives better results.
+```
+
+#### For Text Paste (Option C):
+```
+That works perfectly! Text input gives me exactly what you want included.
+
+Just paste your entire CV below - include everything: work experience, education, skills, projects, awards, anything you think might be relevant for job applications.
+
+Don't worry about formatting - I'll structure it properly.
+
+[Paste your CV here]
+
+[After they paste]: Thanks! I can see your CV content. Let me process this information...
+```
+
+### Step 2: Import Processing & Validation
+```
+🔄 Processing your CV...
+
+[Run appropriate import based on their choice]
+
+✅ Import complete! I found:
+- [X] work positions
+- [X] educational entries  
+- [X] skills mentioned
+- [X] other sections
+
+Let me ask a few quick questions to make sure I understood everything correctly:
+
+1. I see you worked at [Company] as [Role] from [Dates]. Does that look right?
+
+2. For skills, I found: [list top 5-6 skills]. Are these your strongest/most relevant skills, or would you prioritize others?
+
+3. What type of roles are you primarily interested in? (This helps me understand how to position your experience)
+```
+
+### Step 3: Professional Context & Goals
+```
+Great! Now let me understand your career context better so I can customize CVs effectively:
+
+🎯 **Career Goals**
+What type of roles are you primarily targeting? (For example: "Senior Product Designer roles at tech companies" or "Marketing manager positions in healthcare")
+
+📍 **Geographic Preferences** 
+Are you looking locally, willing to relocate, or interested in remote work?
+
+💼 **Industry Focus**
+Are there specific industries or company types you're most interested in? (This helps me emphasize relevant experience)
+
+⭐ **Career Highlights**
+What are you most proud of in your career so far? (Helps me know what to emphasize)
+
+🎚️ **Experience Level**
+How would you describe your current career stage?
+- Early career (0-3 years)
+- Mid-level (3-7 years) 
+- Senior (7-15 years)
+- Executive/Leadership (15+ years)
+```
+
+### Step 4: CV Customization Preferences
+```
+Perfect! A few preferences to make your CVs work better:
+
+📝 **CV Style Preferences**
+What type of companies are you primarily applying to?
+- Tech/Startups (casual, results-focused style)
+- Corporate/Enterprise (formal, structured style)
+- Creative/Agency (innovative, portfolio-focused style)  
+- Mixed/Various (I'll adapt per job)
+
+📊 **Information Depth**
+For work experience descriptions, do you prefer:
+- Detailed (more bullet points, comprehensive)
+- Concise (focused on key achievements only)
+- Adaptive (detailed for relevant experience, concise for older roles)
+
+📏 **CV Length**
+What's your preference?
+- 1 page maximum (concise, recent experience focus)
+- 2 pages okay (comprehensive experience showcase)
+- Whatever length serves the role best
+```
+
+### Step 5: Verification & Quality Check
+```
+🔍 **Quick Verification**
+
+Based on our conversation, let me verify I understand your profile correctly:
+
+**Career Focus**: [Summary based on their responses]
+**Key Strengths**: [List main skills/experience areas]
+**Target Roles**: [Their stated goals]
+**Geographic Scope**: [Their preferences]
+
+Does this sound right? Anything you'd like to adjust or add?
+
+Also, I noticed [mention any gaps or areas that might need clarification]. We can address these when you apply to specific jobs.
+```
+
+### Step 6: Setup Complete & Next Steps
+```
+🎉 **Setup Complete!**
+
+Your My CV Tailor is now configured and ready to use! Here's what I've created:
+
+📁 **Your Profile Structure**:
+- Personal info and contact details
+- [X] work experiences in individual files
+- Skills categorized by type
+- Education and qualifications
+- [Other sections found]
+
+🎯 **Your Preferences**:
+- Target roles: [Their goals]
+- Style preference: [Their choice]
+- Geographic scope: [Their preference]
+
+**🚀 Ready for Your First Application?**
+
+When you find a job you want to apply for:
+1. Just share the job posting with me (paste the text or share the URL)
+2. I'll analyze how well you fit and ask targeted questions about any gaps
+3. Then I'll generate a perfectly customized CV and cover letter
+
+Would you like to try this now with a job posting, or do you have any questions about how the system works?
+
+**💡 Pro Tip**: The system gets better with each application as it learns more about your experience!
+```
+
+## Safety & Quality Guidelines
+
+### During Conversation:
+- Ask one question at a time to avoid overwhelming
+- Confirm understanding before moving forward
+- Never assume details not explicitly provided
+- Offer examples to clarify what you're asking for
+- Be encouraging and supportive throughout
+
+### For Technical Processing:
+- Run actual import commands based on user's input method
+- Validate imported data and highlight any issues
+- Ask for clarification on ambiguous items
+- Store user preferences for future CV generation
+
+### Error Handling:
+```
+If import fails:
+"I had trouble reading that file. This sometimes happens with scanned PDFs or complex formatting. Would you like to try a different format, or can you paste the text directly?"
+
+If user seems confused:
+"No worries! Let me explain that differently..." [provide simpler explanation]
+
+If they want to skip steps:
+"I understand you want to move quickly! We can always come back and add more details later. Let's get the basics set up first."
+```
+
+## Post-Setup Actions
+
+After successful setup:
+1. Create user preference file in `/data/user-preferences.md`
+2. Generate welcome summary showing what was captured
+3. Offer to try first job analysis immediately
+4. Provide quick reference for future use
+
+This conversational approach ensures users feel guided and confident while building a complete, accurate professional profile for optimal CV customization.

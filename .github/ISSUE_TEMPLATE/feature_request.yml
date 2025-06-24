@@ -1,0 +1,142 @@
+name: Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature] "
+labels: ["type: feature", "status: needs-info"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please describe your idea in detail so we can understand how it would improve My CV Tailor.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: What problem would this feature solve? What's currently difficult or impossible?
+      placeholder: |
+        Currently, when I want to... I have to... which is problematic because...
+        
+        This affects my workflow by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your ideal solution. What should happen?
+      placeholder: |
+        I would like My CV Tailor to...
+        
+        The user experience would be...
+        
+        This would work by...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - New CV template or theme
+        - Import/export functionality
+        - AI platform integration
+        - User interface improvement
+        - Data management feature
+        - Documentation improvement
+        - Other (please specify in description)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered any alternative approaches to solving this problem?
+      placeholder: |
+        I also considered...
+        
+        Other tools handle this by...
+        
+        A simpler approach might be...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Critical - I can't use My CV Tailor effectively without this
+        - High - This would significantly improve my experience
+        - Medium - This would be a nice improvement
+        - Low - This would be nice to have someday
+      default: 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Describe specific scenarios where this feature would be helpful.
+      placeholder: |
+        Scenario 1: When applying to tech companies, I need...
+        Scenario 2: When customizing for senior roles, I want...
+        Scenario 3: When working with large amounts of experience data...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai-compatibility
+    attributes:
+      label: AI Platform Compatibility
+      description: Should this work with all AI platforms or specific ones?
+      options:
+        - All AI platforms (Cursor, Claude Code, etc.)
+        - Cursor specifically
+        - Claude Code specifically
+        - Not platform-specific
+        - Unsure
+      default: 0
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: Implementation Ideas (Optional)
+      description: If you have ideas about how this could be implemented, share them here.
+      placeholder: |
+        This could be implemented by...
+        
+        It might require changes to...
+        
+        Similar to how the system currently handles...
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or Mockups (Optional)
+      description: Any examples, links, or mockups that illustrate your idea?
+      placeholder: |
+        Similar to how [other tool] does...
+        
+        An example would be...
+        
+        I've attached a mockup showing...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm you've done the following:
+      options:
+        - label: I have searched existing issues to ensure this feature hasn't been requested
+          required: true
+        - label: This feature aligns with My CV Tailor's safety-first, accuracy-focused philosophy
+          required: true
+        - label: I have provided specific use cases and problem descriptions
+          required: true
+        - label: I understand this is a feature request, not a bug report
+          required: true

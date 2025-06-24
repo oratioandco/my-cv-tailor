@@ -1,0 +1,380 @@
+---
+description: Safely imports CV data from multiple formats (PDF, LinkedIn, text) without assumptions
+globs: 
+  - "input/**/*"
+  - "start-here.md"
+alwaysApply: false
+---
+
+# Rule: Import Initial CV Data (Multi-Format, Safety-First)
+
+## Goal
+Import CV content from multiple input formats (PDF CV, LinkedIn exports, manual text) and structure it into individual data files for future customization. This process creates a complete data foundation while never making assumptions or adding information not explicitly present.
+
+## Input Format Detection
+The system automatically detects and processes multiple input formats in this priority order:
+
+1. **PDF CV**: `input/cv.pdf`
+2. **LinkedIn PDF**: `input/linkedin.pdf` 
+3. **LinkedIn Data**: CSV files in `input/linkedin-data/`
+4. **Manual Text**: Content in `start-here.md`
+5. **Document Attachments**: Files attached to conversation
+
+## Process
+
+### Step 0: Detect Input Format
+Check for input sources in priority order:
+
+```bash
+# 1. Check for PDF CV
+if exists("input/cv.pdf"):
+    input_type = "pdf_cv"
+    source_file = "input/cv.pdf"
+
+# 2. Check for LinkedIn PDF
+elif exists("input/linkedin.pdf"):
+    input_type = "linkedin_pdf" 
+    source_file = "input/linkedin.pdf"
+
+# 3. Check for LinkedIn CSV data
+elif exists("input/linkedin-data/Profile.csv"):
+    input_type = "linkedin_data"
+    source_folder = "input/linkedin-data/"
+
+# 4. Check manual text input
+elif content_exists("start-here.md"):
+    input_type = "manual_text"
+    source_file = "start-here.md"
+
+# 5. Check for attached documents
+elif document_attachments_present():
+    input_type = "attachment"
+    # Process based on attachment type
+else:
+    error("No CV input found. Please use one of the supported input methods.")
+```
+
+### Step 1: Extract Content Based on Format
+
+#### For PDF CV (`input/cv.pdf`)
+```bash
+# Extract text from PDF
+cv_text = read_pdf("input/cv.pdf")
+# Parse as traditional CV format
+parse_traditional_cv(cv_text)
+```
+
+#### For LinkedIn PDF (`input/linkedin.pdf`) 
+```bash
+# Extract text from LinkedIn PDF export
+linkedin_text = read_pdf("input/linkedin.pdf")
+# Parse with LinkedIn-specific structure
+parse_linkedin_pdf(linkedin_text)
+```
+
+#### For LinkedIn Data (`input/linkedin-data/*.csv`)
+```bash
+# Read structured CSV files
+profile_data = read_csv("input/linkedin-data/Profile.csv")
+positions_data = read_csv("input/linkedin-data/Positions.csv") 
+education_data = read_csv("input/linkedin-data/Education.csv")
+skills_data = read_csv("input/linkedin-data/Skills.csv")
+# Parse structured LinkedIn data
+parse_linkedin_data(profile_data, positions_data, education_data, skills_data)
+```
+
+#### For Manual Text (`start-here.md`)
+```bash
+# Read manual text input (existing logic)
+manual_text = read_file("start-here.md")
+parse_traditional_cv(manual_text)
+```
+
+### Step 2: Format-Specific Parsing
+
+#### LinkedIn PDF Parsing Differences
+LinkedIn PDFs have unique structure:
+- **"About" section** = Professional Summary
+- **"Experience" entries** include company logos and social elements
+- **Skills are listed with endorsement counts** (ignore counts, extract skills only)
+- **"Accomplishments"** section includes publications, patents, projects
+- **Narrative style descriptions** vs bullet points
+
+#### LinkedIn CSV Data Parsing
+Process structured LinkedIn data:
+
+**Profile.csv**:
+- Extract: First Name, Last Name, Email, Industry, Summary
+- Map "Summary" → Professional Summary
+- Use "Industry" for context in skills categorization
+
+**Positions.csv**:
+- Extract: Company, Title, Description, Started On, Finished On
+- Convert narrative descriptions to bullet points
+- Handle date formats: "YYYY-MM" or "Month YYYY"
+- Note: LinkedIn descriptions are often paragraph format
+
+**Skills.csv**:
+- Extract skill names only (ignore endorsement counts)
+- Categorize by industry context
+- Don't assume proficiency levels
+
+**Education.csv**:
+- Extract: School, Degree, Field of Study, Started On, Finished On
+- Map LinkedIn education structure to traditional CV format
+
+### Step 3: Parse Content Into Standard Sections
+Regardless of input format, extract and structure into these sections:
+- Contact Information
+- Work Experience
+- Education
+- Skills (categorized: technical, design tools, soft skills)
+- Awards & Recognition
+- Projects
+- Certifications
+- Publications
+- Languages
+- Volunteer Work
+- Any other sections present
+
+### Step 4: Create Data Files
+For each section found, create appropriate files:
+
+#### Personal Information
+Create `/data/personal-info.md`:
+```markdown
+# Personal Information
+
+## Contact Details
+- Full Name: [Exactly as provided]
+- Email: [Exactly as provided]
+- Phone: [Exactly as provided]
+- Location: [Exactly as provided]
+- LinkedIn: [If provided]
+- Portfolio: [If provided]
+- GitHub: [If provided]
+
+## Professional Summary
+[Only if explicitly provided in original CV]
+
+## Date Format Preference
+[Preserve original format: Full dates, Month/Year, or Year only]
+```
+
+#### Work Experience
+For EACH position, create `/data/experiences/[company-name]-[role].md`:
+```markdown
+# [Company Name] - [Job Title]
+
+## Period
+Start: [Exactly as provided]
+End: [Exactly as provided or "Present"]
+Date Display Format: [Original format used]
+
+## Location
+[If provided]
+
+## Company Description
+[Only if explicitly provided]
+
+## Key Responsibilities
+[List exactly as provided, no interpretation]
+
+## Achievements
+[List exactly as provided with original metrics]
+
+## Technologies/Tools Used
+[Only if explicitly mentioned]
+
+## Verification Status
+- Imported: [Date]
+- Verified: No
+- Last Updated: [Date]
+```
+
+### Step 3: Create Verification Log
+Create `/data/verification-log/import-log.md`:
+```markdown
+# Initial CV Import Log
+
+## Import Date: [Current Date]
+
+## Sections Found:
+- [ ] Contact Information
+- [ ] Work Experience ([X] positions)
+- [ ] Education ([X] entries)
+- [ ] Skills
+- [ ] [Other sections found]
+
+## Data Quality Notes:
+- Date formats preserved as: [Format observed]
+- Quantified achievements found: [Yes/No, count]
+- Potential gaps identified: [List any obvious gaps]
+
+## Next Steps:
+1. Review all imported data for accuracy
+2. Run verification process for recent positions
+3. Identify missing information for target roles
+```
+
+### Step 4: Create Skills Inventory
+Organize skills into `/data/skills/[category].md`:
+- technical-skills.md
+- design-tools.md
+- soft-skills.md
+- industry-knowledge.md
+
+Format:
+```markdown
+# [Category] Skills
+
+## Verified Skills
+[Skills explicitly mentioned with context]
+
+## Proficiency Levels
+- Expert: [Tools/skills used extensively]
+- Proficient: [Regular use mentioned]
+- Familiar: [Some experience indicated]
+
+## Context & Evidence
+[For each skill, note where/how it was used]
+```
+
+### Step 5: Preserve Original
+Copy the entire original CV to `/data/initial-cv-raw.md` with header:
+```markdown
+# Original CV - Imported [Date]
+
+## Notes
+This is the exact CV content as provided. All structured data has been extracted to individual files while preserving original formatting and content.
+
+---
+[Original CV content unchanged]
+```
+
+## CRITICAL Safety Rules
+
+### NEVER:
+- Add information not explicitly present
+- Interpret vague statements as specific skills
+- Assume responsibilities based on job title
+- Create achievements that aren't stated
+- Embellish or enhance descriptions
+- Fill in missing dates or details
+- Correct perceived errors without asking
+
+### ALWAYS:
+- Preserve exact wording from original
+- Maintain original date formats
+- Flag any ambiguities for clarification
+- Keep metrics and numbers exactly as stated
+- Note where information is missing
+- Create placeholder files even for empty sections
+
+## Output Summary
+After import, provide:
+```
+✅ CV Import Complete
+
+📥 Input Source: [PDF CV / LinkedIn PDF / LinkedIn Data / Manual Text / Attachment]
+📄 Source File(s): [List files processed]
+
+📁 Files Created:
+- Personal Information: /data/personal-info.md
+- [X] Experience files in /data/experiences/
+- [X] Education files in /data/education/
+- [X] Skill category files in /data/skills/
+- Import log: /data/verification-log/import-log.md
+- Original preserved: /data/initial-cv-raw.md
+
+🔍 Format-Specific Processing:
+[For LinkedIn]: Converted narrative descriptions to bullet points
+[For PDF]: Extracted text successfully, [X]% readable
+[For CSV]: Processed [X] structured data files
+
+⚠️ Clarification Needed:
+[List any ambiguous items found]
+
+📊 Data Quality:
+- Quantified achievements: [X found]
+- Date completeness: [X% complete]
+- Skill evidence: [X skills with context]
+- LinkedIn specific: [Endorsements removed, narrative converted]
+
+Next: Run 'analyze-job-posting.mdc' with your target job description
+```
+
+## LinkedIn-Specific Parsing Guidelines
+
+### LinkedIn PDF Processing
+LinkedIn PDFs have unique formatting that requires special handling:
+
+#### Section Mapping
+- **"About"** → Professional Summary  
+- **"Experience"** → Work Experience (remove company logos, social elements)
+- **"Education"** → Education (standard mapping)
+- **"Skills & Endorsements"** → Skills (ignore endorsement counts)
+- **"Accomplishments"** → Multiple sections (Publications, Projects, Awards)
+
+#### Content Transformation
+**From LinkedIn Narrative Style:**
+```
+"Experienced product designer passionate about creating user-centered solutions 
+that drive business growth. Led cross-functional teams to deliver innovative 
+digital experiences for Fortune 500 clients, resulting in 40% increase in user 
+engagement and $2M revenue growth."
+```
+
+**To Traditional CV Bullet Points:**
+```
+• Led cross-functional product design teams for Fortune 500 clients
+• Delivered user-centered digital solutions resulting in 40% increase in engagement  
+• Drove $2M revenue growth through innovative design strategies
+```
+
+#### Skills Processing
+- Extract skill names only: "Python (15 endorsements)" → "Python"
+- Ignore endorsement counts completely
+- Categorize based on industry context from Profile.csv
+- Flag skills without context for verification
+
+### LinkedIn CSV Data Processing
+
+#### Date Handling
+LinkedIn uses various date formats:
+- "2020-01" → "January 2020"
+- "2020-01-15" → "January 2020" (day precision usually not needed)
+- Empty end date → "Present"
+
+#### Experience Description Conversion
+LinkedIn descriptions are often long paragraphs. Convert to bullet points by:
+1. Identifying key achievements and responsibilities
+2. Extracting quantified results
+3. Converting to action-verb bullet points
+4. Maintaining original metrics exactly
+
+#### Skills Categorization
+Use Profile.csv "Industry" field to inform skill categorization:
+- Technology industry → Emphasize technical skills
+- Design industry → Separate design tools from technical skills  
+- Business industry → Emphasize soft skills and business tools
+
+### Quality Assurance for LinkedIn Imports
+
+#### Common LinkedIn Issues to Address:
+- **Narrative style** → Convert to professional bullet points
+- **Social elements** → Remove "👏 Congratulations" type content
+- **Endorsement counts** → Extract skill names only
+- **Company descriptions** → Keep only if substantive, not marketing copy
+- **Informal language** → Maintain professional tone
+- **Missing dates** → Flag for verification, don't guess
+
+#### LinkedIn vs Traditional CV Differences:
+- LinkedIn optimizes for keywords and engagement
+- Traditional CVs focus on achievements and qualifications
+- LinkedIn includes social proof (endorsements, recommendations)
+- Traditional CVs emphasize measurable results
+- LinkedIn descriptions can be more personal/narrative
+- Traditional CVs use formal, action-oriented language
+
+Remember: This import process is the foundation of trust. Every claim in generated CVs traces back to this verified import. Accuracy here protects the user's professional reputation.

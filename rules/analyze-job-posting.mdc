@@ -1,0 +1,200 @@
+---
+description: Analyzes job postings from text or URL input and calculates user fit
+globs: 
+  - "jobs/*.md"
+  - "jobs/*.txt"
+alwaysApply: false
+---
+
+# Rule: Analyze Job Posting & Determine Fit
+
+## Goal
+Extract requirements from job postings and provide honest assessment of user fit without making assumptions. This analysis drives the verification questions and CV customization process.
+
+## Input Handling
+
+### Step 1: Accept Job Input
+Handle two input methods:
+1. **Text Input**: User pastes job description directly
+2. **URL Input**: Fetch and parse job posting from URL
+
+For URL inputs:
+```bash
+# Use appropriate tool to fetch content
+# Parse HTML to extract job description
+# Save raw content to /data/jobs/[company]-[role]-raw.md
+```
+
+### Step 2: Extract Key Information
+
+Create analysis file `/data/jobs/[company]-[role]-analysis.md`:
+
+```markdown
+# Job Analysis: [Company] - [Role Title]
+
+## Basic Information
+- Company: [Name]
+- Role: [Exact title]
+- Location: [If specified]
+- Type: [Full-time/Contract/etc]
+- Posted Date: [If available]
+- Application Deadline: [If specified]
+
+## Requirements Extraction
+
+### Must-Have Requirements
+[Requirements marked as required, mandatory, must-have]
+1. [Requirement]: 
+   - Original Text: "[Exact quote]"
+   - Category: [Technical/Experience/Soft Skill]
+   - Specific Metrics: [Years, level, etc if mentioned]
+
+### Nice-to-Have Requirements  
+[Requirements marked as preferred, bonus, nice-to-have]
+1. [Requirement]:
+   - Original Text: "[Exact quote]"
+   - Category: [Technical/Experience/Soft Skill]
+
+### Implicit Requirements
+[Industry standards not explicitly stated but likely expected]
+1. [Requirement]:
+   - Reasoning: [Why this is likely required]
+   - Importance: [High/Medium/Low]
+
+## Company Culture Indicators
+- Tone: [Formal/Casual/Technical]
+- Values Emphasized: [List key themes]
+- Work Style: [Remote/Hybrid/Office]
+- Team Size: [If mentioned]
+
+## Keywords for ATS
+### Primary Keywords
+[Most frequently mentioned technical terms and skills]
+
+### Secondary Keywords
+[Related terms and industry jargon]
+
+### Action Verbs Used
+[Verbs that should be mirrored in CV]
+```
+
+### Step 3: Initial Fit Assessment
+
+Calculate honest fit score:
+
+```markdown
+## Fit Assessment
+
+### Confirmed Matches
+[Check against existing verified data only]
+- ✅ [Requirement]: Verified in [data file reference]
+- ✅ [Requirement]: Confirmed experience at [Company]
+
+### Potential Matches
+[Skills/experience that might qualify but need verification]
+- ❓ [Requirement]: Possible match - need to verify [specific aspect]
+- ❓ [Requirement]: Related experience in [area] - needs clarification
+
+### Clear Gaps
+[Requirements with no apparent match in current data]
+- ❌ [Requirement]: No evidence in current profile
+- ❌ [Requirement]: Would need [specific verification]
+
+### Fit Score Calculation
+- Must-Have Matches: [X]/[Total] = [%]
+- Nice-to-Have Matches: [X]/[Total] = [%]
+- Overall Fit: [Weighted average]%
+
+### Recommendation
+[Based on score]
+- 90-100%: Excellent fit - proceed with confidence
+- 70-89%: Good fit - emphasize transferable skills
+- 60-69%: Moderate fit - be selective, focus on strengths
+- Below 60%: Poor fit - consider if growth opportunity aligns with goals
+```
+
+### Step 4: Generate Verification Questions
+
+Create targeted questions for gap analysis:
+
+```markdown
+## Verification Needed
+
+### Priority 1: Must-Have Gaps
+1. **[Requirement]**
+   - Current Status: No verified experience
+   - Question: "The role requires [specific thing]. Have you worked with this at any of your positions? If yes, which company and what specifically did you do?"
+   - Follow-up: "Can you describe a specific project or achievement related to this?"
+
+### Priority 2: Enhance Existing Matches  
+1. **[Requirement]**
+   - Current Status: Basic match found
+   - Question: "You mention [skill] at [Company]. Can you provide specific examples, metrics, or projects that demonstrate this?"
+
+### Priority 3: Transferable Skills
+1. **[Requirement]**
+   - Question: "While you haven't worked directly with [X], have you used similar tools/methods like [Y, Z] that demonstrate comparable skills?"
+```
+
+### Step 5: Industry Context
+
+Add competitive intelligence:
+
+```markdown
+## Industry Context
+
+### Similar Roles Research
+- Typical Requirements: [Common patterns in similar postings]
+- Salary Range: [If available from research]
+- Career Path: [Typical progression]
+
+### Company Insights
+- Recent News: [Relevant developments]
+- Tech Stack: [From job posting or research]
+- Growth Areas: [What they're investing in]
+
+### Competitive Advantage
+Based on your profile:
+- Unique Strengths: [What sets you apart]
+- Positioning Strategy: [How to frame experience]
+```
+
+## Output Format
+
+Provide user-friendly summary:
+
+```
+📊 Job Analysis Complete: [Company] - [Role]
+
+Fit Score: [X]% [Emoji indicator]
+
+✅ Strong Matches ([X]):
+- [List confirmed qualifications]
+
+❓ Need Verification ([X]):
+- [List areas needing clarification]
+
+❌ Gaps Identified ([X]):
+- [List missing requirements]
+
+💡 Recommendation:
+[Honest assessment with constructive guidance]
+
+📝 Next Steps:
+1. Answer [X] verification questions
+2. Review similar roles for better fits
+3. Proceed with CV customization
+
+Ready to start verification? The system will ask targeted questions to build the strongest honest case for your application.
+```
+
+## Safety Principles
+
+- Never assume skills based on job titles
+- Don't inflate fit scores to encourage applications
+- Be transparent about significant gaps
+- Provide honest market context
+- Suggest alternatives if fit is poor
+- Focus on building accurate, defensible narratives
+
+This analysis ensures users only apply to appropriate roles with CVs that honestly represent their qualifications while maximizing their legitimate strengths.

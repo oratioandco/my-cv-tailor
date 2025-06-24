@@ -1,0 +1,238 @@
+---
+description: Verifies user experience through targeted questions without making assumptions
+globs: 
+  - "data/verification-log/*.md"
+alwaysApply: false
+---
+
+# Rule: Verify Experience (Safety-First)
+
+## Goal
+Ask targeted questions to verify user's experience against job requirements without making assumptions or leading them to overstate qualifications.
+
+## Prerequisites
+- Job analysis completed
+- Initial CV imported
+- Gaps identified between requirements and current data
+
+## Verification Process
+
+### Step 1: Load Verification Queue
+From job analysis, identify:
+- Must-have requirements with no verified match
+- Skills mentioned in CV but lacking specific context
+- Experiences that could be relevant but need clarification
+
+### Step 2: Generate Targeted Questions
+
+#### Question Categories
+
+**1. Missing Requirements**
+For skills/experience not found in imported CV:
+```
+"The role requires [specific requirement]. Have you worked with this in any of your positions? 
+
+If yes:
+- Which company was this at?
+- What specific project or task involved this?
+- What was your exact role and contribution?
+- Any measurable outcomes or results?"
+
+If no:
+- "Have you used similar tools/methods like [related alternatives]?"
+- "Any academic, personal, or volunteer experience with this?"
+```
+
+**2. Clarify Existing Claims**
+For vague or general statements in CV:
+```
+Original CV Statement: "[Vague description]"
+
+Questions:
+- "Can you provide a specific example of when you did this?"
+- "What was the scale/scope of this work? (team size, budget, timeline)"
+- "What tools or technologies did you specifically use?"
+- "What was the measurable impact or outcome?"
+```
+
+**3. Context Enhancement**
+For skills mentioned without sufficient detail:
+```
+"You mentioned [skill/tool]. Can you tell me:
+- How long have you been using this?
+- In what context (daily work, one-time project, training)?
+- What level would you consider yourself (beginner, intermediate, advanced)?
+- Any specific achievements or challenges with this tool?"
+```
+
+### Step 3: Question Sequencing
+
+#### Priority Order
+1. **Critical Gaps**: Must-have requirements missing from CV
+2. **Enhancement Opportunities**: Existing experience needing detail
+3. **Transferable Skills**: Related experience that might apply
+4. **Nice-to-Haves**: Preferred qualifications with potential matches
+
+#### Safety Protocols
+- Never suggest answers or lead responses
+- Ask for specific examples, not general claims
+- Request context and details, not just yes/no
+- Probe for measurable outcomes
+- Distinguish between exposure and expertise
+
+### Step 4: Question Delivery
+
+#### Format Example
+```
+📋 Experience Verification: [Company] - [Role]
+
+I need to verify some experience details to ensure accurate representation in your CV. Please be specific and honest - it's better to be accurate than optimistic.
+
+🔍 Priority Questions:
+
+1. **[Requirement]** - Required for this role
+   Current Status: Not found in your CV
+   
+   Question: "The job requires experience with [specific tool/skill]. Have you worked with this at any company? If yes:
+   - Which position was this?
+   - Describe exactly what you did with it
+   - How long did you use it?
+   - Any specific projects or results?"
+
+2. **[Another Requirement]**
+   Current Status: Mentioned briefly in CV
+   
+   Question: "You mention [skill] at [Company]. Can you provide more detail:
+   - What specific tasks required this skill?
+   - How frequently did you use it?
+   - Any measurable outcomes or achievements?"
+
+[Continue for all priority items...]
+
+📝 Verification Rules:
+- Only include experience you can confidently discuss in an interview
+- Provide specific examples, not general statements
+- It's okay to say "no" - honesty protects your reputation
+- Context matters: brief exposure ≠ professional experience
+```
+
+### Step 5: Response Processing
+
+#### Verification Levels
+- **Verified**: Specific examples with context and outcomes
+- **Basic**: General experience but lacking detail
+- **Related**: Adjacent experience that might transfer
+- **None**: No relevant experience found
+
+#### Documentation Format
+For each verified item, create entry in `/data/verification-log/[job-title]-verification.md`:
+
+```markdown
+# Verification Log: [Company] - [Role]
+
+## Verification Date: [Date]
+
+## Verified Skills/Experience
+
+### [Requirement 1]
+- **Status**: Verified
+- **Company**: [Company Name]
+- **Context**: [Specific description provided]
+- **Duration**: [How long used]
+- **Evidence**: [Specific examples/outcomes]
+- **Interview Confidence**: High/Medium/Low
+
+### [Requirement 2]
+- **Status**: Basic
+- **Company**: [Company Name]  
+- **Context**: [Limited experience description]
+- **Evidence**: [Basic examples]
+- **Notes**: [Areas needing more development]
+
+## Gaps Confirmed
+- **[Requirement]**: No relevant experience
+- **[Requirement]**: Only academic/theoretical knowledge
+
+## Transferable Skills Identified
+- **[Skill]**: Experience with [related area] at [Company]
+- **[Skill]**: Similar challenges addressed through [alternative approach]
+
+## Interview Preparation Notes
+[Key points to emphasize, potential questions to expect]
+```
+
+### Step 6: Generate Positioning Strategy
+
+Based on verification results:
+
+#### Strong Matches
+- Lead with verified experience
+- Prepare specific examples for interviews
+- Emphasize quantified outcomes
+
+#### Transferable Skills  
+- Frame related experience positively
+- Show learning ability and adaptability
+- Connect to role requirements explicitly
+
+#### Honest Gaps
+- Acknowledge directly when asked
+- Show willingness to learn
+- Highlight compensating strengths
+
+## Verification Guidelines
+
+### NEVER:
+- Suggest specific answers
+- Encourage exaggeration
+- Accept vague generalizations
+- Allow unverifiable claims
+- Lead user toward desired responses
+
+### ALWAYS:
+- Ask for specific examples
+- Probe for measurable outcomes
+- Distinguish exposure from expertise
+- Document exact user responses
+- Flag areas needing development
+
+### Question Techniques
+
+#### Good Questions
+- "Describe a specific project where you used [skill]"
+- "What was your exact role in [responsibility]?"
+- "How did you measure success in this area?"
+- "Walk me through your typical workflow with [tool]"
+
+#### Avoid Leading Questions
+- ❌ "You probably used [tool] for [task], right?"
+- ❌ "I assume you have experience with [skill]?"
+- ❌ "This sounds similar to [experience], doesn't it?"
+
+## Output Summary
+
+```
+✅ Verification Complete
+
+📊 Results Summary:
+- Questions Asked: [X]
+- Verified Skills: [X]
+- Basic Experience: [X]
+- Gaps Confirmed: [X]
+- Transferable Skills: [X]
+
+📈 Application Readiness:
+- Interview Confidence: [High/Medium/Low]
+- CV Accuracy: [100% verified claims]
+- Gap Strategy: [Prepared responses]
+
+📝 Next Steps:
+1. Review verification log for accuracy
+2. Generate customized CV with verified content
+3. Prepare interview talking points
+4. Consider skills development for gaps
+
+Ready to generate your verified, interview-ready CV!
+```
+
+This verification process ensures every claim in your CV can be confidently defended in interviews while maintaining complete honesty about your experience level.

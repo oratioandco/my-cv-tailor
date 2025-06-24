@@ -1,0 +1,121 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug] "
+labels: ["type: bug", "status: needs-info"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out this form as completely as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe what happened and what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai-platform
+    attributes:
+      label: AI Platform
+      description: Which AI assistant are you using?
+      options:
+        - Cursor
+        - Claude Code  
+        - Other (please specify in description)
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: What operating system are you running?
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other (please specify)
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide detailed steps to reproduce the issue.
+      placeholder: |
+        1. Run @setup.mdc
+        2. Choose option A for PDF upload
+        3. Upload file named example.pdf
+        4. See error message...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: I expected the PDF to be imported successfully and data files to be created.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened? Include any error messages.
+      placeholder: |
+        Error message received:
+        [Paste any error messages here]
+        
+        Files created:
+        [List any files that were or weren't created]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this issue?
+      options:
+        - Critical - Prevents using My CV Tailor entirely
+        - High - Major feature doesn't work
+        - Medium - Feature works but has issues
+        - Low - Minor cosmetic or documentation issue
+      default: 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here.
+      placeholder: |
+        - Browser version (if HTML/PDF issues):
+        - File types you were trying to import:
+        - Any workarounds you found:
+        - Screenshots (if helpful):
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm you've done the following before submitting:
+      options:
+        - label: I have searched existing issues to ensure this bug hasn't been reported
+          required: true
+        - label: I have tested this with the latest version of My CV Tailor
+          required: true
+        - label: I have provided all the requested information above
+          required: true
+        - label: I understand this issue may contain sensitive career information and I have anonymized any personal details
+          required: true

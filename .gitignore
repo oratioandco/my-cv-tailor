@@ -1,0 +1,43 @@
+# My CV Tailor - User Data Protection
+# This ensures your personal CV data is never committed to the repository
+
+# User's personal CV data - NEVER commit
+data/
+!data/user-preferences-template.md
+
+# Generated CV outputs - user's personal documents
+outputs/
+
+# User's input CV files - personal documents
+input/
+!input/README.md
+
+# User's work files
+start-here.md
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Development files
+ai-dev-tasks/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Log files
+*.log
