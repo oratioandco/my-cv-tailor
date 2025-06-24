@@ -2,7 +2,7 @@
 
 > **Perfectly Fitted for Every Job**
 
-Bespoke CVs for discerning professionals who demand accuracy, privacy, and results. My CV Tailor creates custom-fit applications that never exaggerate your experience, transforming job applications from a 2-hour manual chore into a 10-minute guided conversation.
+Bespoke CVs for discerning professionals who demand accuracy, efficiency, and results. My CV Tailor creates custom-fit applications that never exaggerate your experience, transforming job applications from a 2-hour manual chore into a 10-minute guided conversation.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: AI Assistant](https://img.shields.io/badge/Platform-AI%20Assistant-blue.svg)]()
@@ -162,14 +162,6 @@ my-cv-tailor/
 - **Template contributions** - Share your CV designs
 - **Platform integrations** - Add support for new AI assistants
 - **Extensible architecture** - Built for community growth
-
-## 🏆 Success Stories
-
-> *"CV Builder helped me land interviews at 3 FAANG companies. The verification process gave me confidence that every claim was defensible."* - Software Engineer
-
-> *"I went from spending entire weekends customizing CVs to applying to 5 jobs in an evening. Game changer."* - Product Manager
-
-> *"Finally, an AI tool that doesn't make up experience I don't have. The honesty is refreshing and effective."* - UX Designer
 
 ## 🤝 Contributing
 
