@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobias Treppmann - Lebenslauf</title>
+    <meta name="description" content="Tobias Treppmann - Head of Product Design">
+    <meta name="keywords" content="Product Design, Produktstrategie, Design Leadership, Kirche, BibelTV">
+    <style>
+        @font-face {
+            font-family: 'Gambarino-Regular';
+            src: url('assets/fonts/Gambarino-Regular.woff2') format('woff2'),
+                 url('assets/fonts/Gambarino-Regular.woff') format('woff'),
+                 url('assets/fonts/Gambarino-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Switzer';
+            src: url('assets/fonts/Switzer-Variable.woff2') format('woff2-variations'),
+                 url('assets/fonts/Switzer-Variable.woff') format('woff-variations'),
+                 url('assets/fonts/Switzer-Variable.ttf') format('truetype-variations');
+            font-weight: 100 900;
+            font-display: swap;
+            font-style: normal;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            font-family: 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto 20px auto;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            page-break-after: always;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <!-- Hidden semantic content for ATS -->
+        <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0;">
+            <h1>Tobias Treppmann</h1>
+            <div>
+                <h2>Kontaktinformationen</h2>
+                <p>Adresse: Lückstraße 74, 10317 Berlin</p>
+                <p>Telefon: +49 174 9851562</p>
+                <p>E-Mail: hello@treppmann.design</p>
+                <p>Website: treppmann.design</p>
+            </div>
+            <div>
+                <h2>Ausbildung</h2>
+                <p>M.A. Leadership, Kairos University, 2022-laufend</p>
+                <p>B.A. Theologie (äquiv.), Theologisches Seminar Rheinland, 2003-2007</p>
+            </div>
+            <div>
+                <h2>Profil</h2>
+                <p>Erfahrene Führungskraft im Bereich Product Design und Produktstrategie mit über 15 Jahren Expertise in der Gestaltung nutzerorientierter digitaler Lösungen. Spezialisiert auf die Leitung von Design-Teams und die strategische Produktentwicklung kombiniere ich theologische Ausbildung mit moderner Führungskompetenz in der Digitalbranche. Besondere Erfahrung in christlichen Organisationen und der Entwicklung von Software für kirchliche Verwaltung.</p>
+            </div>
+        </div>
+        <svg width="210mm" height="297mm" viewBox="0 0 794 1123" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    .gambarino { font-family: 'Gambarino-Regular', Georgia, serif; }
+                    .switzer { font-family: 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif; }
+                    .blue { fill: #2f5f7f; }
+                    .dark { fill: #1a1a1a; }
+                    .gray { fill: #666; }
+                    .light-gray { fill: #999; }
+                    .name { font-size: 36px; font-weight: normal; }
+                    .section-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
+                    .contact-label { font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+                    .contact-value { font-size: 10px; font-weight: 400; }
+                    .degree { font-size: 10px; font-weight: 400; }
+                    .institution { font-size: 9px; font-weight: 400; font-style: italic; }
+                    .profile-text { font-size: 11px; line-height: 1.6; font-weight: 400; }
+                    .job-title { font-size: 11px; font-weight: 500; }
+                    .job-date { font-size: 9px; font-weight: 400; }
+                    .job-bullet { font-size: 10px; line-height: 1.4; font-weight: 400; }
+                </style>
+            </defs>
+            
+            <!-- Background -->
+            <rect width="794" height="1123" fill="white"/>
+            
+            <!-- LEFT COLUMN (65-280px) -->
+            <!-- Name -->
+            <text x="65" y="150" class="gambarino name blue">Tobias Treppmann</text>
+            
+            <!-- Address Section -->
+            <text x="65" y="230" class="gambarino section-title blue">ADRESSE</text>
+            <text x="65" y="255" class="switzer contact-value dark">Lückstraße 74</text>
+            <text x="65" y="270" class="switzer contact-value dark">10317 Berlin</text>
+            <text x="65" y="285" class="switzer contact-value dark">Deutschland</text>
+            
+            <text x="65" y="315" class="switzer contact-label light-gray">TELEFON</text>
+            <text x="65" y="330" class="switzer contact-value dark">+49 174 9851562</text>
+            
+            <text x="65" y="360" class="switzer contact-label light-gray">E-MAIL</text>
+            <text x="65" y="375" class="switzer contact-value dark">hello@treppmann.design</text>
+            
+            <text x="65" y="405" class="switzer contact-label light-gray">WEBSITE</text>
+            <text x="65" y="420" class="switzer contact-value dark">treppmann.design</text>
+            
+            <!-- Education Section -->
+            <text x="65" y="480" class="gambarino section-title blue">AUSBILDUNG</text>
+            <text x="65" y="505" class="switzer degree dark">M.A. Leadership</text>
+            <text x="65" y="520" class="switzer institution gray">Kairos University</text>
+            <text x="65" y="535" class="switzer institution gray">2022 - laufend</text>
+            
+            <text x="65" y="565" class="switzer degree dark">B.A. Theologie (äquiv.)</text>
+            <text x="65" y="580" class="switzer institution gray">Theologisches Seminar Rheinland</text>
+            <text x="65" y="595" class="switzer institution gray">2003 - 2007</text>
+            
+            <!-- Languages Section -->
+            <text x="65" y="655" class="gambarino section-title blue">SPRACHEN</text>
+            <text x="65" y="680" class="switzer contact-value dark">Deutsch - Muttersprache</text>
+            <text x="65" y="695" class="switzer contact-value dark">Englisch - Verhandlungssicher</text>
+            
+            <!-- RIGHT COLUMN (320-719px) -->
+            <!-- Profile Section -->
+            <text x="320" y="230" class="gambarino section-title blue">PROFIL</text>
+            <text x="320" y="255" class="switzer profile-text dark">Erfahrene Führungskraft im Bereich Product Design und</text>
+            <text x="320" y="273" class="switzer profile-text dark">Produktstrategie mit über 15 Jahren Expertise in der Gestaltung</text>
+            <text x="320" y="291" class="switzer profile-text dark">nutzerorientierter digitaler Lösungen. Spezialisiert auf die</text>
+            <text x="320" y="309" class="switzer profile-text dark">Leitung von Design-Teams und die strategische Produkt-</text>
+            <text x="320" y="327" class="switzer profile-text dark">entwicklung kombiniere ich theologische Ausbildung mit</text>
+            <text x="320" y="345" class="switzer profile-text dark">moderner Führungskompetenz in der Digitalbranche.</text>
+            <text x="320" y="363" class="switzer profile-text dark">Besondere Erfahrung in christlichen Organisationen und der</text>
+            <text x="320" y="381" class="switzer profile-text dark">Entwicklung von Software für kirchliche Verwaltung.</text>
+            
+            <!-- Experience Section -->
+            <text x="320" y="440" class="gambarino section-title blue">BERUFSERFAHRUNG</text>
+            
+            <!-- ChurchDesk -->
+            <text x="320" y="470" class="switzer job-title dark">Leiter Produktmanagement &amp; Produktdesign</text>
+            <text x="580" y="470" class="switzer job-date gray">2024-2025</text>
+            <text x="320" y="485" class="switzer job-title gray">ChurchDesk GmbH (Kirchenverwaltungssoftware) • Berlin</text>
+            <text x="320" y="502" class="switzer job-bullet dark">• Führung von Produktmanagement für die Gemeindeplattform</text>
+            <text x="320" y="517" class="switzer job-bullet dark">• Leitung des Produktdesigns für evangelische und katholische Kirchen</text>
+            <text x="320" y="532" class="switzer job-bullet dark">• Entwicklung eines Buchungssystems mit 70% Zeitersparnis</text>
+            
+            <!-- Ninox Head of Product Design -->
+            <text x="320" y="567" class="switzer job-title dark">Head of Product Design</text>
+            <text x="580" y="567" class="switzer job-date gray">2023-2024</text>
+            <text x="320" y="582" class="switzer job-title gray">Ninox Software GmbH (Low-Code-Plattform) • Berlin</text>
+            <text x="320" y="599" class="switzer job-bullet dark">• Etablierung von Design als strategische Kernfunktion</text>
+            <text x="320" y="614" class="switzer job-bullet dark">• Führung von 5 direkten Mitarbeitern und einem Design Lead</text>
+            <text x="320" y="629" class="switzer job-bullet dark">• Aufbau eines Design Systems für Geschäftsplattform</text>
+            
+            <!-- Ninox Head of Product -->
+            <text x="320" y="664" class="switzer job-title dark">Head of Product (interim)</text>
+            <text x="580" y="664" class="switzer job-date gray">07-10/2023</text>
+            <text x="320" y="679" class="switzer job-title gray">Ninox Software GmbH • Berlin</text>
+            <text x="320" y="696" class="switzer job-bullet dark">• Übernahme der Produktverantwortung in Übergangsphase</text>
+            <text x="320" y="711" class="switzer job-bullet dark">• Gleichzeitige Führung von Product und Design Teams</text>
+            
+            <!-- Datameer -->
+            <text x="320" y="746" class="switzer job-title dark">Director of Design</text>
+            <text x="580" y="746" class="switzer job-date gray">2022-2023</text>
+            <text x="320" y="761" class="switzer job-title gray">Datameer (Enterprise Data Analytics) • Remote</text>
+            <text x="320" y="778" class="switzer job-bullet dark">• Führung des Design Teams für Analytics Platform</text>
+            <text x="320" y="793" class="switzer job-bullet dark">• Stakeholder-Management auf C-Level</text>
+            
+            <!-- Hypoport -->
+            <text x="320" y="828" class="switzer job-title dark">Product UX Strategist</text>
+            <text x="580" y="828" class="switzer job-date gray">2021-2022</text>
+            <text x="320" y="843" class="switzer job-title gray">Hypoport AG (Fintech) • Remote</text>
+            <text x="320" y="860" class="switzer job-bullet dark">• Transformation zur Produktisierung der Service-Center</text>
+            <text x="320" y="875" class="switzer job-bullet dark">• Anwendung von Human-Centered Design Methoden</text>
+            
+            <!-- Spreadshirt -->
+            <text x="320" y="910" class="switzer job-title dark">UX Strategy Lead</text>
+            <text x="580" y="910" class="switzer job-date gray">2016-2019</text>
+            <text x="320" y="925" class="switzer job-title gray">Spreadshirt (E-Commerce) • Leipzig</text>
+            <text x="320" y="942" class="switzer job-bullet dark">• Entwicklung der UX-Strategie für die B2B-Plattform</text>
+            <text x="320" y="957" class="switzer job-bullet dark">• Cross-funktionale Zusammenarbeit in agilem Umfeld</text>
+        </svg>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <svg width="210mm" height="297mm" viewBox="0 0 794 1123" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    .gambarino { font-family: 'Gambarino-Regular', Georgia, serif; }
+                    .switzer { font-family: 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif; }
+                    .blue { fill: #2f5f7f; }
+                    .dark { fill: #1a1a1a; }
+                    .gray { fill: #666; }
+                    .light-gray { fill: #999; }
+                    .section-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
+                    .job-title { font-size: 11px; font-weight: 500; }
+                    .job-date { font-size: 9px; font-weight: 400; }
+                    .job-bullet { font-size: 10px; line-height: 1.4; font-weight: 400; }
+                    .skill-category { font-size: 11px; font-weight: 500; }
+                    .skill-text { font-size: 9px; line-height: 1.4; font-weight: 400; }
+                </style>
+            </defs>
+            
+            <!-- Background -->
+            <rect width="794" height="1123" fill="white"/>
+            
+            <!-- Continue Experience -->
+            <!-- HairDirect -->
+            <text x="65" y="85" class="switzer job-title dark">UX Manager</text>
+            <text x="400" y="85" class="switzer job-date gray">2013-2014</text>
+            <text x="65" y="100" class="switzer job-title gray">HairDirect (E-Commerce) • Lancaster, PA, USA</text>
+            <text x="65" y="117" class="switzer job-bullet dark">• Strategische Mobile-UX-Initiativen und Mobile-Checkout-Redesign</text>
+            <text x="65" y="132" class="switzer job-bullet dark">• Ermöglichung erster mobiler Umsätze durch datengetriebene Strategie</text>
+            
+            <!-- andCulture -->
+            <text x="65" y="167" class="switzer job-title dark">User Experience Designer</text>
+            <text x="400" y="167" class="switzer job-date gray">2012-2013</text>
+            <text x="65" y="182" class="switzer job-title gray">andCulture (Design-Agentur) • Harrisburg, PA, USA</text>
+            <text x="65" y="199" class="switzer job-bullet dark">• UX-Design u.a. für Silicon-Valley-Startups durch A16z-Netzwerk</text>
+            <text x="65" y="214" class="switzer job-bullet dark">• Agile Projektarbeit in Design-Agentur-Umfeld</text>
+            
+            <!-- HOPE International -->
+            <text x="65" y="249" class="switzer job-title dark">Web Designer &amp; Front-End Developer</text>
+            <text x="400" y="249" class="switzer job-date gray">2009-2012</text>
+            <text x="65" y="264" class="switzer job-title gray">HOPE International (Christliche Mikrofinanz-NPO) • Lancaster, PA, USA</text>
+            <text x="65" y="281" class="switzer job-bullet dark">• Webentwicklung für internationale christliche Organisation</text>
+            <text x="65" y="296" class="switzer job-bullet dark">• Mobile-First-Design für globale Zielgruppen in Entwicklungsländern</text>
+            
+            <!-- Skills Section -->
+            <text x="65" y="380" class="gambarino section-title blue">KERNKOMPETENZEN</text>
+            
+            <!-- Leadership & Strategy -->
+            <text x="65" y="410" class="switzer skill-category dark">Führung &amp; Strategie</text>
+            <text x="65" y="428" class="switzer skill-text dark">• Team-Aufbau und -Führung (bis zu 5 Mitarbeiter)</text>
+            <text x="65" y="443" class="switzer skill-text dark">• Produktstrategie und Roadmap-Entwicklung</text>
+            <text x="65" y="458" class="switzer skill-text dark">• Senior Leadership Team Erfahrung</text>
+            <text x="65" y="473" class="switzer skill-text dark">• Cross-funktionale Zusammenarbeit</text>
+            
+            <!-- Design & Technology -->
+            <text x="320" y="410" class="switzer skill-category dark">Design &amp; Technologie</text>
+            <text x="320" y="428" class="switzer skill-text dark">• Design Systems und Component Libraries</text>
+            <text x="320" y="443" class="switzer skill-text dark">• Mobile App Design (React Native)</text>
+            <text x="320" y="458" class="switzer skill-text dark">• Figma, Storybook, Design Tokens</text>
+            <text x="320" y="473" class="switzer skill-text dark">• Barrierefreiheit (WCAG)</text>
+            
+            <!-- Industry Experience -->
+            <text x="65" y="520" class="switzer skill-category dark">Branchenerfahrung</text>
+            <text x="65" y="538" class="switzer skill-text dark">• Kirchliche Verwaltungssoftware (ChMS)</text>
+            <text x="65" y="553" class="switzer skill-text dark">• Non-Profit und christliche Organisationen</text>
+            <text x="65" y="568" class="switzer skill-text dark">• Enterprise B2B Software</text>
+            <text x="65" y="583" class="switzer skill-text dark">• E-Commerce und Marktplätze</text>
+            
+            <!-- Methods -->
+            <text x="320" y="520" class="switzer skill-category dark">Methoden</text>
+            <text x="320" y="538" class="switzer skill-text dark">• User Research und Testing</text>
+            <text x="320" y="553" class="switzer skill-text dark">• Design Thinking und Innovation</text>
+            <text x="320" y="568" class="switzer skill-text dark">• Agile/Scrum Methodologien</text>
+            <text x="320" y="583" class="switzer skill-text dark">• DSGVO-konforme Lösungen</text>
+        </svg>
+    </div>
+</body>
+</html>

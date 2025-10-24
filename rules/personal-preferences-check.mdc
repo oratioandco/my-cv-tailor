@@ -1,0 +1,154 @@
+---
+description: Checks and applies personal CV preferences before generation
+globs: 
+  - "data/personal-preferences.md"
+alwaysApply: true
+---
+
+# Rule: Personal Preferences Check
+
+## Goal
+Ensure all CV generation follows the user's personal preferences for formatting, sections, ordering, and style choices that are specific to their needs rather than system-wide defaults.
+
+## Prerequisites
+- Personal preferences file exists at `/data/personal-preferences.md`
+- CV generation process initiated
+
+## WORKFLOW POSITION
+This rule should be applied BEFORE any CV generation to ensure compliance with personal preferences.
+
+## Personal Preferences Validation
+
+### Step 1: Load Personal Preferences
+**MANDATORY FIRST STEP:**
+1. **Read `/data/personal-preferences.md`** to understand user-specific requirements
+2. **Extract key preferences:**
+   - Date format preference
+   - Desired sections and custom sections
+   - Layout preferences
+   - Chronological ordering rules
+   - Content presentation rules
+   - Section sequences
+   - Style preferences
+
+### Step 2: Date Format Compliance
+**Current Preference**: Year only format
+- ✅ Correct: "2023 - 2024", "2024 - Present"
+- ❌ Incorrect: "Jan 2023 - Oct 2024", "January 15, 2023 - October 30, 2024"
+
+**Validation:**
+- Scan all experience entries for date format consistency
+- Ensure all dates follow year-only preference
+- Flag any deviations for correction
+
+### Step 3: Custom Sections Compliance
+
+#### Required Custom Sections
+1. **"ONGOING" Section (Left Column)**
+   - Must include current freelance/consulting work
+   - Must include long-term mentoring/advisory roles
+   - Format: Project title, company, date range
+   - Location: Left column after Education/Languages
+
+2. **"EARLIER CAREER PROGRESSION" Section**
+   - Must summarize pre-strategic roles (typically 8+ years ago)
+   - Must show complete career trajectory
+   - Must include brief context for each role
+   - **CRITICAL**: Must maintain strict reverse chronological order
+
+**Validation Checklist:**
+- [ ] ONGOING section present in left column
+- [ ] EARLIER CAREER PROGRESSION section present on page 2
+- [ ] All custom sections populated with appropriate content
+
+### Step 4: Chronological Order Verification
+**STRICT RULE**: All experience sections must be in reverse chronological order (newest first)
+
+**Verification Process:**
+1. **Extract all dates** from experience entries
+2. **Sort by end date** (most recent first)
+3. **Verify order** matches the extracted sequence
+4. **Flag any out-of-order entries** for immediate correction
+
+**Example Verification:**
+```
+Expected Order (by end date):
+1. HairDirect (2013-2014) ← Most recent
+2. andCulture (2012-2013)
+3. HOPE International (2009-2012)
+4. Freelance (2003-2008)
+5. Bajaa.com (2000-2003)
+6. Westfalia (1999) ← Earliest
+```
+
+### Step 5: Layout Preferences Compliance
+
+#### Left Column Priority Order
+1. Contact information
+2. Education
+3. Languages (when relevant)
+4. ONGOING section (mandatory custom section)
+
+#### Right Column Priority Order
+1. Profile
+2. Recent Experience (detailed, last 5-7 years)
+3. Older Experience (summary format)
+4. EARLIER CAREER PROGRESSION section
+
+**Validation:**
+- [ ] Left column follows priority order
+- [ ] Right column follows priority order
+- [ ] ONGOING section in correct left column position
+
+### Step 6: Content Presentation Rules
+
+#### Experience Descriptions
+- **Recent roles (5-7 years)**: Full bullet points with achievements
+- **Mid-career roles (8-15 years)**: 2-3 bullet points with key accomplishments
+- **Early career (15+ years)**: Title, company, dates, and brief 1-line context
+
+#### Company Context Requirements
+- Always include location for in-person roles
+- Specify "Remote" when applicable
+- Include brief company/role context for lesser-known organizations
+
+### Step 7: Quality Assurance Checklist
+Before finalizing any CV, verify:
+1. ✅ All dates are in year-only format
+2. ✅ All dates are in reverse chronological order within each section
+3. ✅ ONGOING section includes current parallel work
+4. ✅ EARLIER CAREER PROGRESSION maintains strict chronology
+5. ✅ Left column has preferred sections in correct order
+6. ✅ International/global experience emphasized when relevant
+7. ✅ Custom sections properly formatted and positioned
+
+## Error Handling
+
+### Common Issues and Fixes
+1. **Date Format Inconsistency**
+   - Issue: Mixed date formats in single CV
+   - Fix: Convert all to year-only format
+
+2. **Chronological Order Errors**
+   - Issue: Experiences not in reverse chronological order
+   - Fix: Re-sort by end date, newest first
+
+3. **Missing Custom Sections**
+   - Issue: ONGOING or EARLIER CAREER PROGRESSION sections missing
+   - Fix: Add required sections with appropriate content
+
+4. **Layout Preference Violations**
+   - Issue: Sections not in preferred order/location
+   - Fix: Reorganize according to left/right column priorities
+
+## Enforcement
+**MANDATORY**: This rule MUST be applied before every CV generation.
+**AUTOMATIC**: System should automatically reference personal preferences without user prompting.
+**VALIDATION**: Every generated CV must pass the quality assurance checklist.
+
+## Updates and Maintenance
+- Personal preferences file should be updated when user expresses new preferences
+- Changes should be immediately reflected in subsequent CV generations
+- Preferences should be version-controlled with date stamps
+
+This rule ensures every CV generated matches the user's specific style and formatting preferences while maintaining professional standards and consistency.

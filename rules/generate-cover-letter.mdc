@@ -3,6 +3,8 @@ description: Generates customized cover letter based on verified experience and 
 globs: 
   - "data/**/*.md"
   - "outputs/cv/*.html"
+  - "system-prompt/core-system-prompt.md"
+  - "data/user-profile.md"
 alwaysApply: false
 ---
 
@@ -11,11 +13,36 @@ alwaysApply: false
 ## Goal
 Create a compelling, personalized cover letter that complements the customized CV by highlighting verified experience and demonstrating genuine interest in the specific role and company.
 
+## System Context Integration
+**MANDATORY FIRST STEP:** Load user profile and core system prompt for personalized cover letter generation:
+
+1. **Read Core System Prompt**: `/system-prompt/core-system-prompt.md` for strategic communication excellence and industry knowledge
+2. **Read User Profile**: `/data/user-profile.md` for personalized letter approach:
+   - Communication style and tone preferences guide letter personality and voice
+   - Career transition context shapes story arc (same role/level up/industry switch)
+   - Cultural fit priorities affect company culture emphasis and values alignment
+   - Risk tolerance determines positioning confidence and growth narrative approach
+   - Target role context informs specific value proposition and fit demonstration
+
+**Personalization Application:**
+- Match letter tone and style to user's professional communication preferences
+- Emphasize story elements most relevant to user's career transition goals
+- Highlight cultural fit aspects based on user's company stage and values priorities
+- Apply appropriate positioning confidence matching user's risk tolerance
+- Focus value proposition on user's target role context and competitive advantages
+
 ## Prerequisites
-- Job analysis completed
-- Experience verification finished  
-- CV generated
+- Job analysis completed (`analyze-job-posting.mdc`)
+- Experience verification finished (`verify-experience.mdc`)
+- CV generated (`generate-cv.mdc`)
 - Company research (optional but recommended)
+
+## WORKFLOW POSITION
+This rule is Step 4 (optional) in the sequence:
+1. ✅ Job analysis (`analyze-job-posting.mdc`)
+2. ✅ Experience verification (`verify-experience.mdc`)
+3. ✅ CV generation (`generate-cv.mdc`)
+4. 🎯 **CURRENT:** Cover letter generation (`generate-cover-letter.mdc`)
 
 ## Cover Letter Strategy
 

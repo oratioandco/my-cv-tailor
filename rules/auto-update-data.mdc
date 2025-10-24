@@ -1,0 +1,125 @@
+---
+description: MANDATORY automatic data file updating - the core superpower of my-CV-tailor
+globs:
+  - "data/**/*.md"
+alwaysApply: true
+---
+
+# CRITICAL SYSTEM RULE: Automatic Data File Updating
+
+## THE CORE SUPERPOWER OF MY-CV-TAILOR
+
+🚨 **MANDATORY REQUIREMENT**: Every interaction with the user that involves new information, corrections, clarifications, or strategic insights MUST automatically result in updated data files.
+
+## WHEN THIS RULE APPLIES
+
+**ALWAYS** - This rule has `alwaysApply: true` and MUST be executed whenever:
+- User shares new experience details
+- User provides corrections to existing information
+- User clarifies dates, locations, roles, or responsibilities
+- User adds context about projects, achievements, or impact
+- User shares strategic insights or positioning elements
+- User provides verification for previously unverified claims
+
+## AUTOMATIC UPDATE WORKFLOW
+
+### 1. IMMEDIATE DETECTION
+The system MUST automatically recognize when user has shared information that belongs in the data files:
+- ✅ Company locations, dates, roles
+- ✅ Project details, achievements, metrics
+- ✅ Skills, technologies, methodologies used
+- ✅ Strategic business impact and outcomes
+- ✅ Cross-functional collaboration details
+- ✅ Corrections to previously stored information
+
+### 2. SYSTEMATIC FILE UPDATES
+When new information is detected, the system MUST:
+- **Read existing data files** to understand current state
+- **Identify which files need updates** based on the information type
+- **Preserve all existing verified information** while adding new details
+- **Apply corrections systematically** across all relevant files
+- **Enhance strategic positioning** elements where applicable
+- **Update verification status** from unverified to verified
+
+### 3. FILE TYPES TO UPDATE AUTOMATICALLY
+
+#### Experience Files (`/data/experiences/*.md`)
+- Add new project details, achievements, metrics
+- Correct company information, locations, dates
+- Enhance IMPACT framework elements
+- Update team size, reporting structure, collaboration details
+- Add strategic business context and outcomes
+
+#### Skills Files (`/data/skills/*.md`)
+- Add newly mentioned technical skills, tools, methodologies
+- Update proficiency levels based on user clarifications
+- Add strategic application context and business outcomes
+- Create new skill categories when appropriate
+
+#### Project Files (`/data/projects/*.md`)
+- Add detailed project information and outcomes
+- Update timelines, budgets, team structures
+- Add strategic business impact and user feedback
+- Enhance with methodology and technology details
+
+#### Strategic Positioning (`/data/strategic-positioning.md`)
+- Update competitive advantages based on new information
+- Enhance market positioning elements
+- Add interview-ready story elements
+- Update verification status and confidence levels
+
+### 4. QUALITY STANDARDS FOR AUTOMATIC UPDATES
+
+#### NEVER:
+- Remove existing verified information
+- Overwrite user's exact language with paraphrasing
+- Add information the user did not actually provide
+- Make assumptions beyond what user explicitly stated
+- Combine separate pieces of information inappropriately
+
+#### ALWAYS:
+- Preserve user's exact language and specific details
+- Add source references showing where information came from
+- Update verification status appropriately
+- Maintain chronological accuracy
+- Enhance strategic positioning while staying truthful
+- Create comprehensive, interview-ready documentation
+
+### 5. VERIFICATION AND DOCUMENTATION
+
+Every automatic update MUST include:
+- **Source reference**: "Source: Conversation [Date]" or "Source: User clarification [Date]"
+- **Verification status update**: Change from "No" to "Yes" where appropriate
+- **Strategic context**: How this information enhances positioning
+- **Interview readiness**: Ensure information can be defended in interviews
+
+## SUCCESS CRITERIA
+
+The automatic updating system is working correctly when:
+- ✅ User NEVER has to ask "did you update the knowledge base?"
+- ✅ All shared information is immediately captured in appropriate files
+- ✅ Corrections are applied systematically across all relevant files
+- ✅ Strategic positioning is enhanced with each interaction
+- ✅ Knowledge base grows continuously with each conversation
+- ✅ Information is always current, accurate, and comprehensive
+
+## FAILURE CONDITIONS
+
+🚨 **CRITICAL SYSTEM FAILURE** occurs when:
+- ❌ User shares information that doesn't get automatically captured
+- ❌ User has to remind system to update data files
+- ❌ Corrections aren't applied systematically
+- ❌ New strategic insights aren't documented
+- ❌ Verification status isn't updated appropriately
+
+## IMPLEMENTATION REQUIREMENT
+
+This rule MUST be integrated into every workflow:
+- **Job Analysis**: Capture company research and strategic insights
+- **Experience Verification**: Document all verified details immediately
+- **CV Generation**: Update files with any new information shared during generation
+- **General Conversations**: Capture corrections, clarifications, and new details
+
+The automatic data file updating is what makes my-CV-tailor uniquely powerful - it learns and improves with every interaction, building a comprehensive, strategically positioned knowledge base that enables perfect CV generation and interview preparation.
+
+**THERE ARE NO EXCEPTIONS TO THIS RULE - IT MUST ALWAYS HAPPEN AUTOMATICALLY.**

@@ -1,0 +1,425 @@
+---
+description: Enhanced onboarding flow to capture user-specific system prompt elements and create personalized profile for optimal CV generation
+globs:
+  - "system-prompt/*.md"
+  - "data/user-profile.md"
+alwaysApply: false
+---
+
+# Rule: Enhanced Onboarding & User Profile Setup
+
+## Goal
+Capture comprehensive user-specific information to personalize the core system prompt, enabling highly targeted CV generation that reflects the user's career context, communication style, and strategic positioning needs.
+
+## Prerequisites
+- User has chosen to set up My CV Tailor
+- Core system prompt available at `/system-prompt/core-system-prompt.md`
+- User profile template available at `/system-prompt/user-profile-template.md`
+
+## Enhanced Onboarding Process
+
+### Step 1: Welcome & System Overview
+
+```
+🎯 Welcome to My CV Tailor - Your AI-Powered Job Application Co-Pilot
+
+I'm your personal resume strategist with 25+ years of expertise in design and tech hiring. I'll help you create compelling, truthful CVs that stand out while building a knowledge base that improves with each application.
+
+**What Makes My CV Tailor Different:**
+✅ 100% Verified Content - Never fabricates or embellishes
+✅ Design Industry Expertise - Deep understanding of design hiring
+✅ Strategic Positioning - Maximum impact from actual experience  
+✅ Learning System - Improves with each job application
+✅ Interview-Ready - Every claim defensible with specific examples
+
+**The Process:**
+1. **Enhanced Setup** (15-20 minutes): Comprehensive profile creation
+2. **Job Analysis** (2-3 minutes): Strategic requirement extraction
+3. **Experience Verification** (5-10 minutes): IMPACT framework application
+4. **CV Generation** (2-3 minutes): Beautiful, ATS-optimized output
+
+Let's start by understanding your background and goals to personalize your experience.
+```
+
+### Step 2: Career Context Assessment
+
+#### 2.1 Current Professional Status
+```
+📋 **Current Professional Context**
+
+Let me understand where you are in your career:
+
+**Current Role & Experience:**
+1. What's your current job title? (Use your actual title, not aspirational)
+2. How many years of professional design/tech experience do you have?
+3. What's your primary area of expertise? (Product Design, UX, Design Leadership, etc.)
+4. Which industry are you currently working in?
+5. What's the size of your current company? (Startup/Growth/Scale-up/Enterprise)
+
+**Career Stage Assessment:**
+6. Are you primarily an individual contributor, team lead, or director/executive?
+7. If you manage people, how many direct/indirect reports do you have?
+8. How involved are you in strategic/business decisions? (High/Medium/Low/None)
+
+**Career Transition Context:**
+9. Are you looking to:
+   - Stay in the same role at a different company?
+   - Progress to the next level (IC→Lead, Lead→Director, etc.)?
+   - Switch industries or specializations?
+   - Make a significant career change?
+10. What's driving your job search right now?
+```
+
+#### 2.2 Professional Background Deep Dive
+```
+🎯 **Professional Background Analysis**
+
+Let's understand your experience pattern:
+
+**Industry & Company Experience:**
+11. Which industries have you worked in? (FinTech, Healthcare, B2B SaaS, E-commerce, etc.)
+12. What company stages have you experienced? (Multiple selections OK)
+    - Early startup (0-50 people)
+    - Growth stage (50-200 people)  
+    - Scale-up (200-1000 people)
+    - Enterprise (1000+ people)
+13. Are there any notable/recognizable companies on your resume?
+14. Have you worked in regulated industries? (Finance, Healthcare, etc.)
+
+**Technical & Leadership Depth:**
+15. Do you have any coding/technical implementation experience?
+16. Have you built or managed design systems?
+17. Have you hired, managed, or mentored other designers?
+18. Have you worked directly with C-level executives or VPs?
+19. Have you been involved in fundraising, M&A, or major business initiatives?
+
+**Cross-Functional Collaboration:**
+20. How extensively have you worked with:
+    - Product Managers (Daily/Weekly/Occasionally/Never)
+    - Engineers (Daily/Weekly/Occasionally/Never)  
+    - Marketing teams (Daily/Weekly/Occasionally/Never)
+    - Sales teams (Daily/Weekly/Occasionally/Never)
+    - Customer Success (Daily/Weekly/Occasionally/Never)
+```
+
+#### 2.3 Target Role & Market Context
+```
+🎯 **Target Role Strategy**
+
+Understanding your goals:
+
+**Role Targeting:**
+21. What specific role title(s) are you targeting?
+22. What level/seniority are you aiming for?
+23. Are you open to different types of design roles, or focused on one area?
+24. What industries interest you most for your next role?
+25. What company stage do you prefer? (Startup energy vs Enterprise resources vs Growth excitement)
+
+**Geographic & Work Style:**
+26. Are you location-specific, or open to remote work?
+27. Do you require visa sponsorship?
+28. Do you prefer in-person, remote, or hybrid work environments?
+
+**Timeline & Application Strategy:**
+29. How urgent is your job search? (Immediate/1-3 months/3-6 months/Exploring)
+30. Are you employed currently? (Affects positioning strategy)
+31. Do you prefer applying to fewer, highly-targeted roles or casting a wider net?
+32. What's your interview experience like recently? (Confident/Rusty/Needs preparation)
+```
+
+### Step 3: Communication Style & Positioning Preferences
+
+#### 3.1 Professional Communication Assessment
+```
+💬 **Communication Style & Positioning**
+
+Let's understand how you want to be positioned:
+
+**Professional Tone & Risk Tolerance:**
+33. How would you describe your professional communication style?
+    - Conservative and traditional
+    - Modern and professional
+    - Creative and personality-forward
+    - Technical and detail-oriented
+34. When it comes to resume positioning, do you prefer:
+    - Conservative (safe, understated, focuses on verified achievements)
+    - Moderate (strategic positioning with confident language)
+    - Aggressive (maximum impact, pushing boundaries of truthfulness)
+
+**Cultural Fit & Values:**
+35. How important is cultural fit vs role responsibilities in your job search?
+36. Do you prefer:
+    - Fast-paced, high-growth environments
+    - Stable, process-oriented organizations  
+    - Mission-driven companies
+    - Technical excellence focus
+    - Work-life balance priority
+37. Are there any company types or cultures you want to avoid?
+
+**Industry Language & Positioning:**
+38. Do you prefer formal business language or more casual/modern terminology?
+39. How comfortable are you with design jargon and industry buzzwords?
+40. Should we emphasize business impact, technical depth, or creative excellence?
+```
+
+#### 3.2 Strengths & Differentiation Assessment
+```
+⭐ **Strengths & Unique Value Proposition**
+
+Let's identify what makes you stand out:
+
+**Core Strengths Identification:**
+41. What do colleagues consistently praise you for?
+42. What type of design challenges do you solve best?
+43. What's your superpower in cross-functional collaboration?
+44. When have you had the biggest impact in your career?
+45. What makes you different from other designers at your level?
+
+**Success Patterns & Metrics:**
+46. How do you typically measure the success of your design work?
+    - User metrics (engagement, satisfaction, task completion)
+    - Business metrics (conversion, revenue, efficiency)
+    - Process metrics (delivery speed, team productivity)
+    - Quality metrics (usability scores, accessibility, consistency)
+47. Do you have specific quantitative achievements, or is your impact more qualitative?
+48. What's the biggest process improvement or efficiency gain you've driven?
+
+**Innovation & Leadership Style:**
+49. How do you approach learning new tools/technologies?
+50. Have you introduced new processes, tools, or methodologies to your teams?
+51. If you manage people, how would you describe your leadership style?
+52. How do you handle stakeholder disagreement or pushback on design decisions?
+```
+
+### Step 4: Development Areas & Gap Assessment
+
+#### 4.1 Honest Gap Analysis
+```
+📈 **Development Areas & Growth Opportunities**
+
+Let's honestly assess areas for growth:
+
+**Skill & Experience Gaps:**
+53. What skills do you see in job postings that you don't have yet?
+54. Are there industries or types of design work you haven't experienced?
+55. What technical skills would you like to develop further?
+56. Are there leadership or business skills you want to strengthen?
+
+**Learning & Development Approach:**
+57. How do you typically approach learning new skills?
+58. Do you learn better through formal training, hands-on projects, or mentorship?
+59. How quickly do you usually pick up new tools or processes?
+60. Give an example of a time you successfully learned something outside your comfort zone.
+
+**Interview & Communication Development:**
+61. How confident are you in behavioral interviews?
+62. Do you have strong STAR (Situation-Task-Action-Result) stories prepared?
+63. How comfortable are you discussing salary and compensation?
+64. Any areas where you typically struggle in interviews?
+```
+
+### Step 5: Application History & Pattern Analysis
+
+#### 5.1 Previous Application Experience
+```
+📊 **Application History & Success Patterns**
+
+Understanding your track record:
+
+**Recent Application Experience:**
+65. How many applications have you submitted in the last job search?
+66. What was your typical response rate (applications to interviews)?
+67. Where in the process do you typically not progress (screening, interviews, final rounds)?
+68. What feedback have you received from interviews or rejections?
+
+**Success & Challenge Patterns:**
+69. What types of companies or roles have shown the most interest in you?
+70. Are there patterns in where you've been successful vs unsuccessful?
+71. What questions or topics do you handle best in interviews?
+72. What aspects of interviews do you find most challenging?
+
+**Portfolio & Supporting Materials:**
+73. Do you have a current design portfolio?
+74. How confident are you in your portfolio's ability to showcase your work?
+75. Do you have references prepared and contacted recently?
+76. Have you received feedback on your current resume/CV?
+```
+
+### Step 6: Profile Generation & Verification
+
+#### 6.1 Comprehensive Profile Creation
+After gathering all information, generate a comprehensive user profile:
+
+```markdown
+# User Profile: [Name]
+
+## Profile Generation Date: [Date]
+## Onboarding Completion: Enhanced Setup
+
+## Core Professional Identity
+- **Current Role**: [Actual title from user input]
+- **Experience Level**: [Calculated from responses]
+- **Primary Expertise**: [Core specialization]
+- **Industry Focus**: [Current and target sectors]
+- **Career Stage**: [IC/Lead/Director/Executive assessment]
+
+## Strategic Positioning Context
+- **Career Transition Type**: [Same role/Level up/Industry switch/Career change]
+- **Target Role Level**: [Aspiration vs current reality]
+- **Value Proposition**: [Unique strengths synthesis]
+- **Differentiation Strategy**: [How to stand out]
+- **Gap Navigation Approach**: [How to handle development areas]
+
+## Communication & Style Preferences
+- **Professional Tone**: [Conservative/Modern/Creative/Technical]
+- **Risk Tolerance**: [Positioning strategy preference]
+- **Cultural Fit Priority**: [Importance level]
+- **Industry Language**: [Formal/Technical/Casual preference]
+- **Business vs Creative Emphasis**: [Strategic focus]
+
+## Company & Role Targeting
+- **Preferred Company Stages**: [Startup/Growth/Scale-up/Enterprise]
+- **Target Industries**: [Priority sectors]
+- **Geographic Requirements**: [Location/Remote preferences]
+- **Application Strategy**: [Selective/Volume approach]
+- **Timeline Urgency**: [Immediate/Medium/Long-term]
+
+## Experience Pattern Analysis
+- **Industry Breadth**: [Sectors experienced]
+- **Company Stage Experience**: [Startup to Enterprise exposure]
+- **Leadership Scope**: [Team sizes, responsibility levels]
+- **Cross-Functional Depth**: [PM/Eng/Business collaboration]
+- **Technical Implementation**: [Coding/Systems experience]
+
+## Success Metrics & Impact Style
+- **Primary Impact Measurement**: [User/Business/Process/Quality focus]
+- **Quantitative vs Qualitative**: [Metrics availability]
+- **Innovation Approach**: [Technology adoption, process improvement]
+- **Leadership Style**: [If applicable - collaborative/directive/servant]
+- **Stakeholder Management**: [Comfort level with seniority]
+
+## Development Areas Strategy
+- **Confirmed Skill Gaps**: [Areas needing development]
+- **Experience Gaps**: [Industries/roles not yet tried]
+- **Learning Agility**: [Speed and style of skill acquisition]
+- **Interview Preparation Needs**: [Behavioral/Technical/Salary areas]
+
+## Application History Intelligence
+- **Historical Success Rate**: [Applications to interview conversion]
+- **Strong Performance Areas**: [Where they excel in process]
+- **Challenge Areas**: [Where they typically struggle]
+- **Feedback Patterns**: [Common themes from previous applications]
+
+## Interview Readiness Assessment
+- **STAR Story Bank**: [Preparedness level]
+- **Technical Discussion Comfort**: [Ability to go deep on work]
+- **Salary Negotiation Confidence**: [Compensation discussion comfort]
+- **Portfolio Strength**: [Supporting materials quality]
+
+## Personalized System Prompt Elements
+Based on this profile, the following elements will be emphasized in all interactions:
+- **Industry Focus**: [Specific sector expertise emphasis]
+- **Career Stage Guidance**: [Appropriate depth and positioning]
+- **Communication Style**: [Tone and language matching]
+- **Risk Tolerance**: [Positioning strategy alignment]
+- **Gap Navigation**: [Honest vs growth mindset approach]
+- **Success Pattern Leverage**: [Strength amplification strategy]
+```
+
+#### 6.2 Profile Verification & Refinement
+```
+✅ **Profile Verification**
+
+I've created your comprehensive professional profile based on our conversation. Let me highlight the key strategic insights:
+
+**Your Professional Identity:**
+- [Summary of career stage, expertise, and positioning]
+
+**Strategic Positioning Strategy:**
+- [How we'll position them for maximum impact]
+
+**Communication Approach:**
+- [Tone, style, and risk tolerance alignment]
+
+**Development Area Navigation:**
+- [How we'll handle gaps and growth opportunities]
+
+**Application Strategy:**
+- [Selective vs volume, timeline, preparation needs]
+
+Does this accurately capture your professional context and goals? Any adjustments needed before we save your profile?
+```
+
+### Step 7: System Integration & Next Steps
+
+#### 7.1 Profile Storage & System Configuration
+```python
+# Save comprehensive user profile
+user_profile_path = "/data/user-profile.md"
+# Update system prompt context for all .mdc files
+# Configure personalized verification question priorities
+# Set up learning system tracking
+```
+
+#### 7.2 Onboarding Completion & Next Steps
+```
+🎉 **Enhanced Onboarding Complete!**
+
+Your personalized My CV Tailor system is now configured with:
+
+✅ **Strategic Professional Profile**: Complete career context and positioning strategy
+✅ **Personalized Communication**: Tone and style matching your preferences  
+✅ **Targeted Verification**: Questions prioritized for your experience and goals
+✅ **Gap Navigation Strategy**: Honest approach to development areas
+✅ **Interview Preparation Framework**: Focused on your specific needs
+
+**Your Profile Summary:**
+- **Professional Identity**: [Brief summary]
+- **Career Goal**: [Target transition]
+- **Positioning Strategy**: [Competitive advantage approach]
+- **Communication Style**: [Tone preference]
+- **Application Strategy**: [Selective/Volume approach]
+
+**Next Steps:**
+1. **Import Your Current CV**: We'll analyze your existing experience data
+2. **Analyze Target Jobs**: Strategic requirement extraction with design expertise
+3. **Verify & Enhance Experience**: IMPACT framework application with your style
+4. **Generate Strategic CVs**: Beautiful, ATS-optimized output for each application
+
+Ready to import your current CV and start creating compelling job applications?
+
+**Quick Start Options:**
+- `@import-initial-cv.mdc` - Upload/paste your current resume
+- `@analyze-job-posting.mdc` - Start with a specific job analysis
+- `@setup.mdc` - Modify your profile settings
+
+Your My CV Tailor system will now provide personalized, strategic guidance that matches your career context and communication preferences while maintaining complete truthfulness about your experience and qualifications.
+```
+
+## Enhanced Learning & Adaptation
+
+### Continuous Profile Enhancement
+The system will continuously learn and adapt by:
+
+1. **Application Outcome Tracking**: Success rates by positioning strategy
+2. **Interview Feedback Integration**: Refining messaging based on results  
+3. **Market Intelligence Updates**: Industry trend and requirement evolution
+4. **Communication Style Refinement**: Tone and language optimization
+5. **Gap Navigation Evolution**: Improving development area positioning
+
+### Profile Update Mechanisms
+- **Quarterly Reviews**: Systematic profile updates based on experience
+- **Application Learnings**: Integration of successful positioning strategies
+- **Market Feedback**: Adjustments based on interview and application responses
+- **Career Progression**: Updates reflecting new roles, skills, and achievements
+
+## Integration with Existing .mdc Files
+
+This enhanced onboarding creates a foundation that all existing .mdc files will reference:
+
+- **`analyze-job-posting.mdc`**: Uses profile to prioritize requirements and cultural fit
+- **`verify-experience.mdc`**: Targets questions based on career stage and gaps  
+- **`generate-cv.mdc`**: Applies communication style and positioning preferences
+- **`generate-cover-letter.mdc`**: Matches tone and emphasizes relevant strengths
+
+The user profile becomes the strategic foundation for all subsequent CV generation, ensuring consistent, personalized guidance that evolves with each application and success.

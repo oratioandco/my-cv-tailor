@@ -1,0 +1,287 @@
+---
+description: Manages user profile creation, updates, and evolution throughout the CV generation lifecycle
+globs:
+  - "data/user-profile.md"
+  - "system-prompt/user-profile-template.md"
+  - "data/user-learning/*.md"
+alwaysApply: false
+---
+
+# Rule: User Profile Management & Evolution
+
+## Goal
+Provide comprehensive user profile management including creation, updates, validation, and evolution based on new information, application outcomes, and career progression. Ensure the user profile remains current and strategically valuable for optimal CV generation.
+
+## Profile Management Operations
+
+### 1. Profile Creation (Initial Setup)
+**New User Profile Generation:**
+When creating a user profile from onboarding data:
+
+1. **Load Template**: Use `/system-prompt/user-profile-template.md` as foundation
+2. **Populate Core Data**: Fill in all sections based on onboarding conversation
+3. **Validate Completeness**: Ensure all critical sections have meaningful data
+4. **Strategic Analysis**: Add strategic insights based on profile combination
+5. **Save Profile**: Create `/data/user-profile.md` with comprehensive data
+
+**Profile Creation Process:**
+```markdown
+🔧 **Creating User Profile**
+
+Based on your onboarding responses, I'm creating your comprehensive professional profile:
+
+**Core Identity Captured:**
+- Professional Context: [Current role, experience level, industry]
+- Career Goals: [Target roles, transition type, timeline]
+- Communication Style: [Tone preference, risk tolerance, cultural priorities]
+- Strengths & Gaps: [Value proposition, development areas, learning patterns]
+
+**Strategic Analysis:**
+- Career Stage Assessment: [IC/Lead/Director with growth trajectory]
+- Positioning Strategy: [How to maximize competitive advantage]
+- Application Approach: [Selective vs volume, timing, preparation needs]
+- Market Context: [Industry trends affecting your search]
+
+**Profile Validation:**
+- Completeness Check: [All critical sections populated]
+- Consistency Review: [No conflicting information]
+- Strategic Coherence: [Career goals align with background]
+- Communication Alignment: [Style matches preferences]
+
+Your profile will be saved and used to personalize all future interactions. Ready to proceed with CV generation?
+```
+
+### 2. Profile Updates & Maintenance
+**Incremental Profile Enhancement:**
+During conversations and CV generation processes:
+
+1. **New Information Integration**: Add newly discovered experience, skills, or context
+2. **Preference Refinement**: Update communication style or positioning based on feedback
+3. **Career Evolution**: Adjust career stage or target role based on developments
+4. **Learning Application**: Incorporate insights from application outcomes
+5. **Validation Updates**: Mark information as verified through experience validation
+
+**Update Triggers:**
+- New experience or achievement shared during verification
+- Change in target role or industry preference
+- Feedback on positioning strategy effectiveness
+- Application outcome data (success/failure patterns)
+- Interview feedback or salary negotiation results
+- Skill development or certification completion
+
+**Update Process:**
+```markdown
+🔄 **Profile Update Required**
+
+I've identified new information that should be added to your profile:
+
+**New Information Detected:**
+- [Experience/Skill/Achievement]: [Details to be added]
+- [Preference Change]: [Updated communication or positioning preference]
+- [Career Development]: [Progression in role, skills, or goals]
+
+**Profile Sections Affected:**
+- [Section 1]: [Specific changes needed]
+- [Section 2]: [Additional updates required]
+- [Strategic Implications]: [How this affects positioning]
+
+**Validation Status:**
+- [Verified]: Information confirmed through verification process
+- [Self-Reported]: User-provided, needs verification in future
+- [Inferred]: Strategic insight based on pattern analysis
+
+Updating your profile now to ensure future CV generation reflects this new context.
+```
+
+### 3. Profile Validation & Quality Assurance
+**Comprehensive Profile Review:**
+Regular validation to ensure profile accuracy and strategic value:
+
+1. **Data Accuracy Check**: Verify all information is current and correct
+2. **Consistency Analysis**: Ensure no conflicting information across sections
+3. **Strategic Coherence**: Confirm career goals align with background and market reality
+4. **Positioning Effectiveness**: Assess if current strategy is optimal for goals
+5. **Gap Analysis**: Identify missing information that could improve positioning
+
+**Validation Checklist:**
+```markdown
+✅ **Profile Validation Checklist**
+
+**Core Data Accuracy:**
+- [ ] Current role and experience level accurate
+- [ ] Target roles align with career progression reality
+- [ ] Industry experience and preferences current
+- [ ] Communication style preferences validated through interaction
+
+**Strategic Alignment:**
+- [ ] Career transition type realistic and well-positioned
+- [ ] Value proposition differentiating and defensible
+- [ ] Gap navigation strategy honest and development-focused
+- [ ] Application strategy appropriate for goals and timeline
+
+**Completeness Assessment:**
+- [ ] All critical profile sections populated with meaningful data
+- [ ] Success patterns documented for positioning optimization
+- [ ] Development areas identified with learning strategies
+- [ ] Application history and feedback patterns captured
+
+**Market Relevance:**
+- [ ] Target company stages and industries reflect current market
+- [ ] Positioning strategy competitive in current hiring landscape
+- [ ] Communication style appropriate for target company cultures
+- [ ] Risk tolerance aligned with career stage and market conditions
+```
+
+### 4. Profile Evolution Based on Outcomes
+**Learning-Driven Profile Enhancement:**
+Evolution based on application results and career progression:
+
+1. **Success Pattern Recognition**: Identify what positioning strategies work best
+2. **Failure Analysis**: Learn from rejections to refine approach
+3. **Interview Feedback Integration**: Adjust positioning based on interview performance
+4. **Market Response Analysis**: Understand which messages resonate with target market
+5. **Career Progression Updates**: Reflect new roles, responsibilities, and achievements
+
+**Outcome Integration Process:**
+```markdown
+📈 **Profile Evolution Based on Application Outcomes**
+
+**Application Results Analysis:**
+- Applications Submitted: [Number] with [Success Rate]%
+- Interview Conversion: [Rate] with patterns in [Specific Industries/Roles]
+- Common Feedback Themes: [Positive patterns] and [Development areas]
+- Positioning Effectiveness: [What messaging worked best]
+
+**Profile Evolution Recommendations:**
+- **Communication Style**: [Adjustments based on market response]
+- **Positioning Strategy**: [Refinements for better competitive advantage]
+- **Target Role Focus**: [Narrowing or expanding based on success patterns]
+- **Gap Navigation**: [Enhanced strategies based on interview feedback]
+
+**Strategic Insights Gained:**
+- [Market Intelligence]: What target market values most
+- [Positioning Optimization]: Most effective value proposition elements
+- [Communication Refinement]: Tone and style adjustments for better resonance
+- [Career Strategy**: Long-term positioning based on actual market response
+
+**Updated Profile Elements:**
+- Success Patterns: [Documented effective strategies]
+- Market Intelligence: [Industry-specific insights gained]
+- Interview Readiness: [Areas of strength and development needs]
+- Positioning Confidence: [Realistic assessment based on outcomes]
+```
+
+### 5. Profile-Based Personalization Engine
+**Dynamic Personalization Application:**
+Using profile data to customize all interactions:
+
+1. **Communication Adaptation**: Match tone, style, and complexity to preferences
+2. **Content Prioritization**: Emphasize experiences most relevant to target roles
+3. **Verification Focus**: Target questions on areas most critical for positioning
+4. **Positioning Strategy**: Apply risk tolerance and career stage appropriate messaging
+5. **Market Intelligence**: Filter insights most relevant to user's context
+
+**Personalization Framework:**
+```python
+# Profile-based personalization logic
+def apply_personalization(user_profile, interaction_context):
+    communication_style = user_profile.get('communication_style')
+    career_stage = user_profile.get('career_stage')
+    risk_tolerance = user_profile.get('risk_tolerance')
+    target_context = user_profile.get('target_roles')
+    
+    # Adapt communication
+    if communication_style == 'conservative':
+        tone = 'professional_understated'
+        risk_positioning = 'safe_verified_achievements'
+    elif communication_style == 'modern':
+        tone = 'strategic_confident'
+        risk_positioning = 'strategic_optimization'
+    elif communication_style == 'creative':
+        tone = 'personality_forward_professional'
+        risk_positioning = 'creative_differentiation'
+    
+    # Adapt content depth
+    if career_stage in ['IC', 'individual_contributor']:
+        focus = 'technical_depth_collaboration'
+        leadership_emphasis = 'potential_and_growth'
+    elif career_stage in ['team_lead', 'manager']:
+        focus = 'balanced_ic_and_leadership'
+        leadership_emphasis = 'demonstrated_team_impact'
+    elif career_stage in ['director', 'executive']:
+        focus = 'strategic_organizational_impact'
+        leadership_emphasis = 'cultural_business_influence'
+    
+    return PersonalizationConfig(tone, risk_positioning, focus, leadership_emphasis)
+```
+
+### 6. Profile Backup & Version Control
+**Profile History Management:**
+Maintain profile evolution history for learning and rollback:
+
+1. **Version Tracking**: Save profile versions with timestamps
+2. **Change Documentation**: Record what changed and why
+3. **Rollback Capability**: Ability to revert to previous profile versions
+4. **Evolution Analysis**: Track how profile changes correlate with outcomes
+5. **Learning Integration**: Use profile evolution patterns for system improvement
+
+**Version Control Structure:**
+```markdown
+/data/profile-history/
+├── user-profile-v1.0-[date].md      # Initial onboarding profile
+├── user-profile-v1.1-[date].md      # First major update after applications
+├── user-profile-v2.0-[date].md      # Significant evolution after role change
+├── profile-change-log.md            # Detailed change tracking
+└── evolution-analysis.md            # Pattern analysis for system learning
+```
+
+## Profile Integration with CV Generation
+
+### 1. Mandatory Profile Loading
+**Every Interaction Must:**
+- Load current user profile for context
+- Apply personalization based on profile data
+- Update profile with new information discovered
+- Validate profile accuracy during verification processes
+- Evolve profile based on user feedback and outcomes
+
+### 2. Profile-Driven Customization
+**CV Generation Customization:**
+- **Content Selection**: Prioritize experiences based on target role alignment
+- **Language Adaptation**: Match communication style and industry preferences
+- **Positioning Strategy**: Apply risk tolerance and career stage appropriate messaging
+- **Cultural Fit Emphasis**: Highlight values alignment based on company preferences
+- **Gap Navigation**: Handle development areas according to user's comfort level
+
+### 3. Continuous Profile Enhancement
+**Learning Integration:**
+- Document successful positioning strategies in profile
+- Update target role alignment based on application outcomes
+- Refine communication preferences based on user satisfaction
+- Evolve career stage assessment based on demonstrated capabilities
+- Integrate market intelligence relevant to user's context
+
+## Quality Assurance & Validation
+
+### 1. Profile Accuracy Monitoring
+**Regular Validation:**
+- Quarterly profile review for accuracy and relevance
+- Consistency checks across all profile sections
+- Strategic coherence validation for career goals
+- Market relevance assessment for target roles and positioning
+
+### 2. Personalization Effectiveness
+**Outcome Tracking:**
+- Monitor user satisfaction with personalized interactions
+- Track application success rates by personalization strategy
+- Assess interview performance correlation with profile accuracy
+- Measure long-term career advancement alignment with profile goals
+
+### 3. System Learning Integration
+**Profile Evolution Intelligence:**
+- Learn from successful profile patterns across users
+- Identify effective personalization strategies by user type
+- Develop predictive models for career progression
+- Refine onboarding questions based on profile effectiveness
+
+This comprehensive profile management system ensures every user has a dynamic, accurate professional profile that evolves with their career and enables increasingly sophisticated, personalized CV generation and career guidance.

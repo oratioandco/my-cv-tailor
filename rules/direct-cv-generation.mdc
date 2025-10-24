@@ -1,0 +1,73 @@
+# Direct CV Generation Process
+
+## Purpose
+Generate CVs by directly reading data files and building content step by step, with verification at every stage.
+
+## MANDATORY PRINCIPLE
+**NEVER generate, assume, or fabricate ANY information.** If data doesn't exist in files, leave blank or exclude entirely.
+
+## Step-by-Step Process
+
+### Step 1: Read Personal Information
+```
+Read: /data/personal-info.md
+Extract: Name, Email, Phone, Location, LinkedIn, Portfolio
+Verify: All fields have actual data
+Rule: Use EXACTLY as written in file
+```
+
+### Step 2: Determine Current Title
+```
+Read: Most recent experience file
+Extract: Job title from that role
+Rule: Use ACTUAL job title, never target role
+```
+
+### Step 3: Read Education Data
+```
+Read: /data/education/*.md files
+For each file:
+  - Extract institution name EXACTLY
+  - Extract dates EXACTLY  
+  - Extract degree type EXACTLY
+  - Extract location if present
+Rule: If field is empty, omit from CV entirely
+Rule: NEVER substitute or assume institution names
+```
+
+### Step 4: Read Experience Data
+```
+Read: /data/experiences/*.md files
+For each file:
+  - Check verification status
+  - If contains "[NO VERIFIED CONTENT]" → EXCLUDE entirely
+  - If verified → extract only documented content
+  - Extract dates, location, company, title EXACTLY
+Rule: No experience content = no inclusion in CV
+```
+
+### Step 5: Read Skills Data  
+```
+Read: /data/skills/*.md files
+Extract: Only skills with context/evidence
+Rule: Include skill only if verification context exists
+```
+
+### Step 6: Build CV Content
+Use template but populate ONLY with verified data:
+- Missing data = omit section
+- No assumptions or generation
+- Every fact traceable to source file
+
+### Step 7: Verification Check
+Before finalizing:
+- Cross-reference every claim against source files
+- Verify no fabricated content exists
+- Confirm all institutions/companies/dates match exactly
+
+## Failure Protocol
+If ANY step cannot be completed with verified data:
+- STOP generation process
+- Report missing data
+- Request user to provide accurate information
+- NEVER fill gaps with assumptions

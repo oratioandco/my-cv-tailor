@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobias Treppmann - Resume</title>
+    <meta name="description" content="Tobias Treppmann - Mobile UX Design Leader specializing in data-driven consumer experiences">
+    <meta name="keywords" content="Mobile UX Design, Product Design, Consumer Psychology, Service Design, User Research, Berlin, Cross-functional Leadership, Data-driven Design, Travel Technology">
+    <style>
+        @font-face {
+            font-family: 'Gambarino-Regular';
+            src: url('../assets/fonts/Gambarino-Regular.woff2') format('woff2'),
+                 url('../assets/fonts/Gambarino-Regular.woff') format('woff'),
+                 url('../assets/fonts/Gambarino-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Switzer';
+            src: url('../assets/fonts/Switzer-Variable.woff2') format('woff2-variations'),
+                 url('../assets/fonts/Switzer-Variable.woff') format('woff-variations'),
+                 url('../assets/fonts/Switzer-Variable.ttf') format('truetype-variations');
+            font-weight: 100 900;
+            font-display: swap;
+            font-style: normal;
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            font-family: 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.4;
+            font-size: 10px;
+        }
+        
+        /* Typography Scale - EDIT THESE VALUES TO ADJUST SPACING */
+        .name { 
+            font-family: 'Gambarino-Regular', Georgia, serif; 
+            font-size: 36px; 
+            font-weight: normal; 
+            color: #2f5f7f;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        
+        .section-title { 
+            font-family: 'Gambarino-Regular', Georgia, serif;
+            font-size: 11px; 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: #2f5f7f;
+            margin-top: 24px;        /* EDIT: Space above section titles */
+            margin-bottom: 12px;     /* EDIT: Space below section titles */
+        }
+        
+        .section-title:first-child {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        
+        .contact-label { 
+            font-size: 9px; 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: #999;
+            margin-top: 12px;        /* EDIT: Space between contact sections */
+            margin-bottom: 2px;      /* EDIT: Space below contact labels */
+        }
+        
+        .contact-label:first-child {
+            margin-top: 0;
+        }
+        
+        .contact-value { 
+            font-size: 10px; 
+            font-weight: 400; 
+            color: #1a1a1a;
+            margin-bottom: 0;
+        }
+        
+        .profile-text { 
+            font-size: 11px; 
+            line-height: 1.6; 
+            font-weight: 400; 
+            color: #1a1a1a;
+            margin-bottom: 0;
+        }
+        
+        .job-header {
+            margin-top: 18px;        /* EDIT: Space between job entries */
+            margin-bottom: 6px;      /* EDIT: Space below job header */
+        }
+        
+        .job-header:first-child {
+            margin-top: 0;
+        }
+        
+        .job-title-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .job-title { 
+            font-size: 11px; 
+            font-weight: 500; 
+            color: #1a1a1a;
+        }
+        
+        .job-date { 
+            font-size: 9px; 
+            font-weight: 400; 
+            color: #999;
+        }
+        
+        .company { 
+            font-size: 9px; 
+            font-weight: 400; 
+            font-style: italic; 
+            color: #2f5f7f;
+            margin-top: 1px;         /* EDIT: Space above company line */
+            margin-bottom: 6px;      /* EDIT: Space below company line */
+        }
+        
+        .location {
+            font-size: 9px;
+            font-weight: 400;
+            color: #999;
+            margin-left: 8px;
+        }
+        
+        .job-bullets {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .job-bullet { 
+            font-size: 10px; 
+            line-height: 1.4; 
+            font-weight: 400; 
+            color: #1a1a1a;
+            margin-bottom: 4px;      /* EDIT: Space between bullet points */
+            padding-left: 12px;
+            position: relative;
+        }
+        
+        .job-bullet:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2f5f7f;
+        }
+        
+        .job-bullet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .degree { 
+            font-size: 10px; 
+            font-weight: 400; 
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        
+        .institution { 
+            font-size: 9px; 
+            font-weight: 400; 
+            font-style: italic; 
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        .edu-date { 
+            font-size: 9px; 
+            font-weight: 400; 
+            color: #999;
+            margin-bottom: 12px;     /* EDIT: Space between education entries */
+        }
+        
+        .edu-date:last-child {
+            margin-bottom: 0;
+        }
+        
+        .skill-category { 
+            font-size: 11px; 
+            font-weight: 500; 
+            color: #1a1a1a;
+            margin-top: 12px;        /* EDIT: Space between skill categories */
+            margin-bottom: 3px;      /* EDIT: Space below skill category titles */
+        }
+        
+        .skill-category:first-child {
+            margin-top: 0;
+        }
+        
+        .skill-text { 
+            font-size: 9px; 
+            line-height: 1.4; 
+            font-weight: 400; 
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        .skill-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Page Layout - EDIT THESE FOR COLUMN WIDTHS AND GAPS */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto 20px auto;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            page-break-after: always;
+            padding: 50px;          /* EDIT: Page margins */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        .page-header {
+            width: 100%;
+            margin-bottom: 32px;    /* EDIT: Space below name header */
+        }
+        
+        /* Two-column layout for page 1 - EDIT COLUMN SIZES HERE */
+        .page-1-content {
+            display: grid;
+            grid-template-columns: 200px 1fr;  /* EDIT: Left column width, right column fills remaining */
+            gap: 40px;                          /* EDIT: Gap between columns */
+            height: 100%;
+        }
+        
+        /* Single column layout for page 2+ */
+        .page-content {
+            width: 100%;
+        }
+        
+        .left-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .right-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Hidden ATS content */
+        .ats-hidden {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            opacity: 0;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden semantic content for ATS -->
+    <div class="ats-hidden">
+        <h1>Tobias Treppmann</h1>
+        <p>Mobile UX Design Leader Berlin Germany</p>
+        <p>Contact: hello@tobiast.com</p>
+        <p>Linkedin: https://linkedin.com/in/tobiast</p>
+        <p>Mobile: +49 176 2145 6789</p>
+        
+        <h2>Professional Summary</h2>
+        <p>Mobile UX Design Leader with 7+ years of experience specializing in data-driven consumer experiences. Expert in consumer psychology and mobile-first design strategies. Proven track record of increasing user engagement through strategic design decisions and cross-functional collaboration. Based in Berlin with extensive experience in travel technology, fintech, and service design.</p>
+        
+        <h2>Core Competencies</h2>
+        <p>Mobile UX Design, Product Design, Consumer Psychology, Service Design, User Research, Cross-functional Leadership, Data-driven Design, Travel Technology, Fintech Experience, Strategic Design, User Engagement Optimization, Design Systems, Mobile-first Strategy, Service Design, Customer Journey Mapping</p>
+        
+        <h2>Professional Experience</h2>
+        <p>Senior UX Designer AirHelp Berlin Germany 2023-2024</p>
+        <p>Lead UX Designer Hypoport Berlin Germany 2021-2023</p>
+        <p>Senior Product Designer Contentful Berlin Germany 2019-2021</p>
+        <p>UX Designer Freelance Berlin Germany 2018-2019</p>
+        <p>Product Designer Klarna Stockholm Sweden 2017-2018</p>
+        <p>Junior UX Designer SAP Walldorf Germany 2016-2017</p>
+        
+        <h2>Education</h2>
+        <p>Bachelor of Arts in Design University of Applied Sciences Potsdam Germany 2012-2016</p>
+        <p>Certificate in Service Design School of Design Thinking Potsdam Germany 2020</p>
+        
+        <h2>Key Skills</h2>
+        <p>Design Tools: Figma, Sketch, Adobe Creative Suite, Principle, Framer, InVision, Miro, FigJam</p>
+        <p>Research Methods: User interviews, Usability testing, A/B testing, Analytics interpretation, Journey mapping, Personas, Card sorting</p>
+        <p>Technical: HTML, CSS, JavaScript basics, React Native basics, Design systems, Accessibility standards WCAG</p>
+        <p>Languages: German native, English fluent, Swedish conversational</p>
+    </div>
+
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="page-header">
+            <div class="name">Tobias Treppmann</div>
+        </div>
+        <div class="page-1-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <div class="section-title">Contact</div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">hello@tobiast.com</div>
+                
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">linkedin.com/in/tobiast</div>
+                
+                <div class="contact-label">Mobile</div>
+                <div class="contact-value">+49 176 2145 6789</div>
+                
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Berlin, Germany</div>
+                
+                <div class="section-title">Education</div>
+                <div class="degree">Bachelor of Arts in Design</div>
+                <div class="institution">University of Applied Sciences Potsdam</div>
+                <div class="edu-date">2012 - 2016</div>
+                
+                <div class="degree">Certificate in Service Design</div>
+                <div class="institution">School of Design Thinking, Potsdam</div>
+                <div class="edu-date">2020</div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-column">
+                <div class="section-title">Profile</div>
+                <div class="profile-text">Mobile UX Design Leader with 7+ years of experience specializing in data-driven consumer experiences. Expert in consumer psychology and mobile-first design strategies, with a proven track record of increasing user engagement by 90% through strategic design decisions. Passionate about creating seamless digital experiences that drive business results through cross-functional collaboration and strategic thinking.</div>
+                
+                <div class="section-title">Experience</div>
+                
+                <div class="job-header">
+                    <div class="job-title-line">
+                        <div class="job-title">Senior UX Designer</div>
+                        <div class="job-date">2023 - 2024</div>
+                    </div>
+                    <div class="company">AirHelp<span class="location">Berlin, Germany</span></div>
+                </div>
+                <ul class="job-bullets">
+                    <li class="job-bullet">Led mobile-first design strategy for passenger rights platform, optimizing user experience across 16 European markets</li>
+                    <li class="job-bullet">Implemented consumer psychology principles to increase claim submission rates by 35% through strategic UX improvements</li>
+                    <li class="job-bullet">Collaborated with cross-functional teams to redesign core user journeys, reducing drop-off rates by 28%</li>
+                    <li class="job-bullet">Established design system components that improved development efficiency by 40% across multiple product teams</li>
+                </ul>
+                
+                <div class="job-header">
+                    <div class="job-title-line">
+                        <div class="job-title">Lead UX Designer</div>
+                        <div class="job-date">2021 - 2023</div>
+                    </div>
+                    <div class="company">Hypoport<span class="location">Berlin, Germany</span></div>
+                </div>
+                <ul class="job-bullets">
+                    <li class="job-bullet">Spearheaded service design transformation for financial technology platform, improving customer satisfaction scores by 45%</li>
+                    <li class="job-bullet">Led cross-functional design thinking workshops that generated 12+ validated product concepts</li>
+                    <li class="job-bullet">Designed and implemented user research framework that reduced time-to-insight by 50% for product decisions</li>
+                    <li class="job-bullet">Mentored junior designers and established design processes that scaled across 3 product teams</li>
+                </ul>
+                
+                <div class="job-header">
+                    <div class="job-title-line">
+                        <div class="job-title">Senior Product Designer</div>
+                        <div class="job-date">2019 - 2021</div>
+                    </div>
+                    <div class="company">Contentful<span class="location">Berlin, Germany</span></div>
+                </div>
+                <ul class="job-bullets">
+                    <li class="job-bullet">Designed mobile-responsive interfaces for content management platform used by 500,000+ developers globally</li>
+                    <li class="job-bullet">Increased user engagement by 90% through data-driven design improvements and A/B testing methodologies</li>
+                    <li class="job-bullet">Established accessibility standards (WCAG 2.1 AA) across all product touchpoints</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="page-content">
+            <div class="section-title">Experience (continued)</div>
+            
+            <div class="job-header">
+                <div class="job-title-line">
+                    <div class="job-title">UX Designer (Freelance)</div>
+                    <div class="job-date">2018 - 2019</div>
+                </div>
+                <div class="company">Various Clients<span class="location">Berlin, Germany</span></div>
+            </div>
+            <ul class="job-bullets">
+                <li class="job-bullet">Delivered UX consulting services for 8+ startups and established companies across fintech and e-commerce sectors</li>
+                <li class="job-bullet">Specialized in mobile-first design strategies that improved conversion rates by average 25% across client projects</li>
+                <li class="job-bullet">Conducted user research and usability testing that informed strategic product decisions for early-stage companies</li>
+                <li class="job-bullet">Developed design systems and component libraries that reduced development time by 30% for client teams</li>
+            </ul>
+            
+            <div class="job-header">
+                <div class="job-title-line">
+                    <div class="job-title">Product Designer</div>
+                    <div class="job-date">2017 - 2018</div>
+                </div>
+                <div class="company">Klarna<span class="location">Stockholm, Sweden</span></div>
+            </div>
+            <ul class="job-bullets">
+                <li class="job-bullet">Designed payment solutions for mobile commerce platform serving 150M+ consumers across 17 countries</li>
+                <li class="job-bullet">Applied consumer psychology insights to optimize checkout flows, increasing completion rates by 22%</li>
+                <li class="job-bullet">Collaborated with international teams to ensure design consistency across multiple European markets</li>
+                <li class="job-bullet">Conducted user interviews and data analysis that informed strategic product roadmap decisions</li>
+            </ul>
+            
+            <div class="job-header">
+                <div class="job-title-line">
+                    <div class="job-title">Junior UX Designer</div>
+                    <div class="job-date">2016 - 2017</div>
+                </div>
+                <div class="company">SAP<span class="location">Walldorf, Germany</span></div>
+            </div>
+            <ul class="job-bullets">
+                <li class="job-bullet">Contributed to enterprise software design projects within SAP's Design & Co-Innovation Center</li>
+                <li class="job-bullet">Participated in design thinking workshops that generated user-centered solutions for B2B software challenges</li>
+                <li class="job-bullet">Developed expertise in complex data visualization and enterprise user interface design</li>
+                <li class="job-bullet">Collaborated with engineering teams to ensure feasible implementation of design solutions</li>
+            </ul>
+            
+            <div class="section-title">Core Skills</div>
+            
+            <div class="skill-category">Design Tools</div>
+            <div class="skill-text">Figma, Sketch, Adobe Creative Suite, Principle, Framer, InVision, Miro, FigJam</div>
+            
+            <div class="skill-category">Research Methods</div>
+            <div class="skill-text">User interviews, Usability testing, A/B testing, Analytics interpretation, Journey mapping, Personas, Card sorting</div>
+            
+            <div class="skill-category">Technical</div>
+            <div class="skill-text">HTML, CSS, JavaScript basics, React Native basics, Design systems, Accessibility standards (WCAG)</div>
+            
+            <div class="skill-category">Languages</div>
+            <div class="skill-text">German (native), English (fluent), Swedish (conversational)</div>
+        </div>
+    </div>
+</body>
+</html>
